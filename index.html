@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUAN — Villa La Angostura, Patagonia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --verde-oscuro: #2d4a1e;
+    --verde-medio: #4a7c35;
+    --verde-claro: #7aaa58;
+    --verde-palido: #c8ddb8;
+    --verde-bg: #f2f5ee;
+    --marron-oscuro: #3e2a10;
+    --marron-medio: #7a5230;
+    --marron-claro: #b08050;
+    --marron-palido: #e8d8c0;
+    --crema: #f8f4ee;
+    --blanco: #ffffff;
+    --texto: #2a1f10;
+    --texto-suave: #5a4530;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--texto);
+    background: var(--crema);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(45, 74, 30, 0.95);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--crema);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--verde-claro);
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--verde-palido);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--blanco); }
+
+  .nav-cta {
+    background: var(--marron-claro);
+    color: var(--crema) !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 2px;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--verde-oscuro) 0%, #1a3010 40%, var(--marron-oscuro) 100%);
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image:
+      repeating-linear-gradient(45deg, var(--verde-claro) 0px, var(--verde-claro) 1px, transparent 1px, transparent 60px),
+      repeating-linear-gradient(-45deg, var(--verde-claro) 0px, var(--verde-claro) 1px, transparent 1px, transparent 60px);
+  }
+
+  .hero-mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    opacity: 0.12;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 2rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--verde-claro);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    color: var(--crema);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-subtitle-brand {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--verde-palido);
+    letter-spacing: 0.25em;
+    font-style: italic;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: rgba(248,244,238,0.7);
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--marron-claro);
+    color: var(--crema);
+    text-decoration: none;
+    padding: 0.85rem 2.2rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--marron-medio); }
+
+  .btn-secondary {
+    border: 1px solid rgba(248,244,238,0.4);
+    color: var(--crema);
+    text-decoration: none;
+    padding: 0.85rem 2.2rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 2px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--crema); background: rgba(255,255,255,0.05); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(248,244,238,0.4);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(248,244,238,0.4), transparent);
+    animation: scroll-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 0; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--verde-medio);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--verde-oscuro);
+    margin-bottom: 1.2rem;
+    line-height: 1.15;
+  }
+
+  .section-lead {
+    font-size: 1.05rem;
+    color: var(--texto-suave);
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  /* SEPARATOR */
+  .sep {
+    width: 48px;
+    height: 2px;
+    background: var(--marron-claro);
+    margin: 1.2rem 0 2rem;
+  }
+
+  /* BED SECTION */
+  #bed {
+    background: var(--crema);
+  }
+
+  .cabin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .cabin-visual {
+    background: var(--verde-oscuro);
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .cabin-svg-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+
+  .cabin-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: var(--marron-claro);
+    color: var(--crema);
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+
+  .amenities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .amenity {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .amenity-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--verde-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .amenity-icon svg { width: 16px; height: 16px; fill: var(--verde-medio); }
+
+  .amenity-text h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    margin-bottom: 0.1rem;
+  }
+
+  .amenity-text p {
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+  }
+
+  .duplex-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .duplex-card {
+    background: var(--blanco);
+    border: 1px solid var(--verde-palido);
+    border-radius: 4px;
+    padding: 1.2rem;
+  }
+
+  .duplex-card h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    color: var(--verde-oscuro);
+    margin-bottom: 0.5rem;
+  }
+
+  .duplex-card ul {
+    list-style: none;
+    font-size: 0.82rem;
+    color: var(--texto-suave);
+  }
+
+  .duplex-card ul li::before {
+    content: '— ';
+    color: var(--marron-claro);
+  }
+
+  .capacity-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--verde-oscuro);
+    color: var(--crema);
+    padding: 1.2rem 1.8rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .capacity-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 3rem;
+    color: var(--verde-palido);
+    line-height: 1;
+  }
+
+  .capacity-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-top: 0.2rem;
+  }
+
+  /* TREK SECTION */
+  #trek {
+    background: var(--verde-oscuro);
+  }
+
+  #trek .section-tag { color: var(--verde-claro); }
+  #trek .section-title { color: var(--crema); }
+  #trek .section-lead { color: rgba(248,244,238,0.65); }
+  #trek .sep { background: var(--marron-claro); }
+
+  .trek-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .trek-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(200,221,184,0.2);
+    border-radius: 4px;
+    padding: 1.8rem 1.5rem;
+    position: relative;
+    transition: background 0.25s, border-color 0.25s;
+  }
+
+  .trek-card:hover {
+    background: rgba(255,255,255,0.09);
+    border-color: rgba(200,221,184,0.4);
+  }
+
+  .trek-difficulty {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.25rem 0.7rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .diff-facil { background: rgba(122,170,88,0.2); color: #a8d880; }
+  .diff-media { background: rgba(176,128,80,0.2); color: #d4a870; }
+  .diff-alta { background: rgba(180,60,40,0.2); color: #e08070; }
+
+  .trek-card h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--crema);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .trek-card p {
+    font-size: 0.82rem;
+    color: rgba(248,244,238,0.6);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .trek-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .trek-meta-item {
+    font-size: 0.75rem;
+    color: var(--verde-palido);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .trek-discount-banner {
+    margin-top: 3rem;
+    background: var(--marron-oscuro);
+    border: 1px solid var(--marron-claro);
+    border-radius: 4px;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .trek-discount-text h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    color: var(--crema);
+    margin-bottom: 0.1rem;
+  }
+
+  .trek-discount-text p {
+    font-size: 0.8rem;
+    color: rgba(248,244,238,0.6);
+  }
+
+  .trek-discount-badge {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.6rem;
+    color: var(--marron-claro);
+    font-style: italic;
+    white-space: nowrap;
+    margin-left: auto;
+  }
+
+  /* PAQUETES */
+  #paquetes {
+    background: var(--marron-palido);
+  }
+
+  .paquetes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .paquete-card {
+    background: var(--blanco);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .paquete-header {
+    background: var(--verde-oscuro);
+    padding: 2rem 2rem 1.5rem;
+  }
+
+  .paquete-dias {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--verde-claro);
+    margin-bottom: 0.5rem;
+  }
+
+  .paquete-header h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.6rem;
+    color: var(--crema);
+    margin-bottom: 0.5rem;
+  }
+
+  .paquete-tagline {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(248,244,238,0.6);
+    line-height: 1.6;
+  }
+
+  .paquete-body {
+    padding: 1.8rem 2rem;
+    flex: 1;
+  }
+
+  .paquete-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .paquete-body ul li {
+    font-size: 0.87rem;
+    color: var(--texto-suave);
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .paquete-body ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--verde-medio);
+  }
+
+  .paquete-footer {
+    padding: 1.2rem 2rem;
+    border-top: 1px solid var(--marron-palido);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* LUAN / NOSOTROS */
+  #luan {
+    background: var(--crema);
+  }
+
+  .luan-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .luan-portrait {
+    position: relative;
+  }
+
+  .luan-portrait-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--verde-oscuro);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .luan-frame {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    right: -1.5rem;
+    bottom: -1.5rem;
+    border: 2px solid var(--marron-claro);
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .luan-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: 2rem;
+    background: var(--marron-claro);
+    color: var(--crema);
+    padding: 0.8rem 1.4rem;
+    border-radius: 2px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .luan-content p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+  }
+
+  .luan-valores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .valor-item {
+    border-left: 3px solid var(--verde-medio);
+    padding-left: 1rem;
+  }
+
+  .valor-item h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    margin-bottom: 0.2rem;
+  }
+
+  .valor-item p {
+    font-size: 0.78rem;
+    color: var(--texto-suave);
+    margin: 0 !important;
+  }
+
+  /* RESERVA */
+  #reserva {
+    background: var(--verde-oscuro);
+    padding: 5rem 0;
+  }
+
+  .reserva-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .reserva-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    .reserva-cols { grid-template-columns: 1fr; }
+  }
+
+  #reserva .section-tag { color: var(--verde-claro); }
+  #reserva .section-title { color: var(--crema); margin-bottom: 0.5rem; }
+  #reserva .sep { margin: 1.2rem auto 2rem; }
+
+  .reserva-lead {
+    color: rgba(248,244,238,0.65);
+    font-size: 1rem;
+    margin-bottom: 0;
+    line-height: 1.8;
+  }
+
+  .reserva-form {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(200,221,184,0.2);
+    border-radius: 4px;
+    padding: 2.5rem;
+    text-align: left;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(248,244,238,0.5);
+    font-weight: 700;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(200,221,184,0.2);
+    border-radius: 2px;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    color: var(--crema);
+    font-family: 'Lato', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(248,244,238,0.3); }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: rgba(200,221,184,0.5); }
+
+  .form-group select option { background: var(--verde-oscuro); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--marron-claro);
+    color: var(--crema);
+    border: none;
+    padding: 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover { background: var(--marron-medio); }
+
+  /* FOOTER */
+  footer {
+    background: var(--marron-oscuro);
+    color: rgba(248,244,238,0.5);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  footer strong {
+    color: var(--crema);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  /* LOCATION STRIP */
+  .location-strip {
+    background: var(--marron-oscuro);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .location-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    color: rgba(248,244,238,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .location-item svg { width: 14px; height: 14px; fill: var(--marron-claro); flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">LUAN</a>
+  <ul class="nav-links">
+    <li><a href="#bed">Cabaña</a></li>
+    <li><a href="#trek">Trek</a></li>
+    <li><a href="#paquetes">Bed & Trek</a></li>
+    <li><a href="#luan">Nosotros</a></li>
+    <li><a href="#reserva" class="nav-cta">Reservar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg-pattern"></div>
+
+  <svg class="hero-mountains" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon fill="#c8ddb8" points="0,200 180,60 320,130 500,20 680,100 820,40 960,90 1100,10 1250,80 1440,30 1440,200"/>
+    <polygon fill="#7aaa58" points="0,200 120,110 280,170 440,80 600,140 750,70 900,120 1060,50 1200,100 1440,60 1440,200" opacity="0.5"/>
+  </svg>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Villa La Angostura · Patagonia Argentina</p>
+    <h1 class="hero-title">LUAN</h1>
+    <p class="hero-desc">Un proyecto que nace desde el corazón, inspirado en tres elementos fundamentales: hogar, naturaleza y aventura. Una experiencia única para conectarte con la belleza de la Patagonia.</p>
+    <div class="hero-buttons">
+      <a href="#reserva" class="btn-primary">Consultar disponibilidad</a>
+      <a href="#trek" class="btn-secondary">Ver salidas de trekking</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    explorar
+  </div>
+</section>
+
+<!-- LOCATION STRIP -->
+<div class="location-strip">
+  <div class="location-item">
+    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    Villa La Angostura, Neuquén
+  </div>
+  <div class="location-item">
+    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+    Hasta 6 personas
+  </div>
+  <div class="location-item">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+    Guía habilitado AAGM
+  </div>
+  <div class="location-item">
+    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+    Parque Nacional Nahuel Huapi
+  </div>
+</div>
+
+<!-- CABAÑA SECTION -->
+<section id="bed">
+  <div class="section-inner">
+    <p class="section-tag">Alojamiento</p>
+    <div class="sep"></div>
+    <div class="cabin-grid">
+      <div>
+        <h2 class="section-title">La Cabaña</h2>
+        <p class="section-lead">Un refugio en el jardín de nuestra casa, diseñado para que te sientas en hogar. Con 2 habitaciones en suite conectadas con un living-cocina.</p>
+        <p style="font-size:0.9rem; color:var(--texto-suave); margin-bottom:1.5rem;">La casa tiene una planta de 54m² con vista al Cerro O'Connor, situada a 5 km del centro de Villa La Angostura y a 2 km del acceso al Cerro Bayo. Dos habitaciones de 18m² tipo loft con entrepiso y baño privado, comunicadas a través de un living-cocina — ideal para compartir momentos en grupo.</p>
+
+        <div class="amenities">
+          <div class="amenity">
+            <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M21 10.12h-6.78l2.74-2.82-2-1.9L12 8.46 8.04 5.4l-2 1.9 2.74 2.82H2v2h19v-2zM2 14v2a2 2 0 002 2h16a2 2 0 002-2v-2H2z"/></svg></div>
+            <div class="amenity-text"><h4>Cocina completa</h4><p>Salón-cocina compartido equipado</p></div>
+          </div>
+          <div class="amenity">
+            <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15c0-1.66 1.34-3 3-3s3 1.34 3 3H8z"/></svg></div>
+            <div class="amenity-text"><h4>Smart TV + Wi-Fi</h4><p>Entretenimiento y conectividad</p></div>
+          </div>
+          <div class="amenity">
+            <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M18.92 5.01C18.72 4.42 18.16 4 17.5 4h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-6.99zM6.85 6h10.29l1.08 4H5.77l1.08-4zM19 17H5v-5h14v5z"/></svg></div>
+            <div class="amenity-text"><h4>Parrilla & exterior</h4><p>Mesa y sillas de exterior</p></div>
+          </div>
+          <div class="amenity">
+            <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg></div>
+            <div class="amenity-text"><h4>Ropa blanca</h4><p>Incluida en ambas habitaciones</p></div>
+          </div>
+          <div class="amenity">
+            <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg></div>
+            <div class="amenity-text"><h4>Descuento trekking</h4><p>Precio especial en salidas guiadas</p></div>
+          </div>
+        </div>
+
+        <div class="capacity-bar">
+          <div>
+            <div class="capacity-num">6</div>
+            <div class="capacity-label">personas máximo</div>
+          </div>
+          <div style="width:1px; height:50px; background:rgba(255,255,255,0.15);"></div>
+          <div style="font-size:0.85rem; color:rgba(248,244,238,0.7); line-height:1.6;">2 habitaciones · 2 baños<br>Manzano · 5 km del centro</div>
+        </div>
+      </div>
+
+      <!-- CARRUSEL -->
+      <div>
+        <div style="position:relative; border-radius:4px; overflow:hidden; margin-bottom:1rem; background:var(--verde-oscuro);">
+          <div id="carrusel" style="display:flex; transition:transform 0.45s ease; will-change:transform;">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.19.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.19%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.19%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.20.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.20%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.20%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.20%20(3).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.21.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.21%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.21%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.21%20(3).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.22.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+            <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-05-28%20at%2020.21.22%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Cabaña LUAN">
+          </div>
+          <button onclick="moverCarrusel(-1)" style="position:absolute; left:0.8rem; top:50%; transform:translateY(-50%); background:rgba(26,48,16,0.75); border:none; color:#c8ddb8; width:38px; height:38px; border-radius:50%; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center;">&#8249;</button>
+          <button onclick="moverCarrusel(1)" style="position:absolute; right:0.8rem; top:50%; transform:translateY(-50%); background:rgba(26,48,16,0.75); border:none; color:#c8ddb8; width:38px; height:38px; border-radius:50%; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center;">&#8250;</button>
+          <div id="contador" style="position:absolute; bottom:0.8rem; right:1rem; background:rgba(26,48,16,0.7); color:#c8ddb8; font-size:0.72rem; padding:0.2rem 0.6rem; border-radius:2px;">1 / 13</div>
+          <div id="dots" style="position:absolute; bottom:0.8rem; left:50%; transform:translateX(-50%); display:flex; gap:5px;"></div>
+        </div>
+
+        <div class="duplex-card" style="background:var(--verde-bg); border:1px solid rgba(45,74,30,0.2);">
+          <h4>2 habitaciones iguales · hasta 3 personas c/u</h4>
+          <ul style="margin-top:0.5rem;">
+            <li>2 camas de 1 plaza (PB)</li>
+            <li>Colchón de 2 plazas en entrepiso</li>
+            <li>Baño privado: ducha, inodoro, bidet</li>
+            <li>Ropa blanca · Secador de pelo</li>
+            <li>Escritorio plegable · Aire frío/calor · Estufa a gas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREK SECTION -->
+<section id="trek">
+  <div class="section-inner">
+    <p class="section-tag">Salidas de trekking</p>
+    <div class="sep"></div>
+    <h2 class="section-title">Explorá la Patagonia</h2>
+    <p class="section-lead">Senderos para todos los niveles, guiados por Andrés — guía habilitado AAGM. Cada ruta, una postal distinta del lago Nahuel Huapi y la cordillera.</p>
+
+    <h3 style="font-family:'Cormorant Garamond',Georgia,serif; color:var(--verde-palido); font-size:1.1rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1.5rem; font-weight:400;">Salidas de día</h3>
+
+    <div class="trek-grid">
+      <div class="trek-card">
+        <span class="trek-difficulty diff-facil">Fácil</span>
+        <h3>Bosque de Arrayanes</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
+        <p>El sendero más icónico de la zona. 12 km por la Península de Quetrihué entre árboles de corteza canela únicos en el mundo, con vistas al lago en todo el recorrido.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 24 km</span><span class="trek-meta-item">⏱ 4–8 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-facil">Fácil</span>
+        <h3>Mirador Belvedere y Cascada Inacayal</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <p>Sendero accesible con bosque nativo, mirador con vistas al lago y la recompensa de una cascada de aguas cristalinas. Ideal para todos los niveles.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 5 km</span><span class="trek-meta-item">⏱ 3–5 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-facil">Fácil</span>
+        <h3>Última Esperanza</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <p>Recorrido tranquilo por bosque valdiviano con vistas al lago. Ideal para quienes buscan conectar con la naturaleza sin grandes esfuerzos físicos.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 5 km</span><span class="trek-meta-item">⏱ 2–3 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Cerro Centinela</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <p>Vistas panorámicas del Lago Nahuel Huapi, Brazo Huemul y hasta Bariloche. Un clásico imperdible, perfecto para un primer trekking de montaña.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 7 km</span><span class="trek-meta-item">⏱ 3–5 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Cerro O'Connor — Mirador</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <p>Ascenso hasta el mirador con vistas al lago y la cordillera. Excelente para quienes quieren disfrutar el cerro sin llegar a cumbre.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 5 km</span><span class="trek-meta-item">⏱ 2–4 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Cerro O'Connor — Cumbre</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
+        <p>Ascenso completo hasta la cima con vistas 360° al Nahuel Huapi. Visible desde Manzano y desde la cabaña LUAN.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 10 km</span><span class="trek-meta-item">⏱ 6–8 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Cajón Negro</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <p>Recorrido por un estrecho cañón entre paredes de roca y bosque nativo. Un paisaje único y muy recompensante.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 14 km</span><span class="trek-meta-item">⏱ 4–7 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Cerro Panguinal</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <p>Ascenso por bosque de coihues y lengas hasta vistas privilegiadas al lago y la cordillera. Sendero tranquilo y bien marcado.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 8 km</span><span class="trek-meta-item">⏱ 3–5 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Cruz del Falso Filo Belvedere</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <p>Variante del clásico Belvedere hasta una cruz con vistas panorámicas. Menos exigente que la cumbre completa, pero con paisajes igualmente impactantes.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 11 km</span><span class="trek-meta-item">⏱ 4–8 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Cerro Tres Monjes</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <p>Tres cimas características sobre el bosque patagónico. Sendero con buenas vistas al lago y la cordillera.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 8 km</span><span class="trek-meta-item">⏱ 3–5 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Sendero a La Tapera (Huella Andina)</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
+        <p>Tramo de la Huella Andina hasta el paraje La Tapera, por bosque profundo y senderos históricos. Una jornada larga e inmersiva en la Patagonia auténtica.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 20 km</span><span class="trek-meta-item">⏱ 9–12 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-alta">Alta</span>
+        <h3>Cerro O'Connor — Vuelta Completa</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
+        <p>El circuito más largo y exigente, con toda la diversidad del cerro. Para trekkers experimentados que buscan la experiencia total.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 16 km</span><span class="trek-meta-item">▲ 1.140 m</span><span class="trek-meta-item">⏱ 8–10 hs</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-alta">Alta</span>
+        <h3>Filo Belvedere & Cajón Negro</h3>
+        <p>El circuito más completo: subida al Filo Belvedere y descenso al Cajón Negro entre bosque nativo y cascadas.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 20 km</span><span class="trek-meta-item">▲ 914 m</span><span class="trek-meta-item">⏱ 8–10 hs</span></div>
+      </div>
+
+      <div class="trek-card">
+        <span class="trek-difficulty diff-facil">Fácil</span>
+        <h3>Cascada Dora y Santa Ana</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
+        <p>Día largo por la aduana. Paisaje donde la lava solidificada, cursos de agua y el bosque valdiviano se combinan de forma única. Acceso por el Paso Cardenal Samoré.</p>
+        <div class="trek-meta"><span class="trek-meta-item">⏱ Día largo</span></div>
+      </div>
+
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>El Quemado</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
+        <p>Sendero por zona de bosque nativo afectado por incendios, con paisajes únicos y vistas a la cordillera.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 12 km</span><span class="trek-meta-item">⏱ 4–6 hs</span></div>
+      </div>
+
+      <div class="trek-card">
+        <span class="trek-difficulty diff-alta">Alta</span>
+        <h3>Cerro Falkner</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
+        <p>Ubicado más lejos sobre la Ruta de los 7 Lagos. Sendero corto pero empinado y rocoso. Para quienes buscan un verdadero desafío de montaña con vistas extraordinarias.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 9 km</span><span class="trek-meta-item">⏱ 5–7 hs</span></div>
+      </div>
+
+    </div>
+
+    <h3 style="font-family:'Cormorant Garamond',Georgia,serif; color:var(--verde-palido); font-size:1.1rem; letter-spacing:0.15em; text-transform:uppercase; margin:3.5rem 0 1.5rem; font-weight:400;">Travesías con noche</h3>
+
+    <div class="trek-grid">
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Cerro Dormilón 🏠</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">A partir de USD 150 · hasta 4 personas</span>
+        <p>Acceso en lancha cruzando el brazo Rincón del Nahuel Huapi. Ascenso al refugio histórico del Club Andino (1933). Noche en refugio incluida.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 12 km</span><span class="trek-meta-item">⛵ Lacustre</span><span class="trek-meta-item">🏠 Con refugio</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Cerro Colorado 🏠</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">A partir de USD 150 · hasta 4 personas</span>
+        <p>Acceso en lancha desde Puerto Manzano. Vistas panorámicas 360° al Nahuel Huapi, el Tronador y el Lanín. Noche en refugio disponible.</p>
+        <div class="trek-meta"><span class="trek-meta-item">↔ 7 km</span><span class="trek-meta-item">⏱ 3–6 hs</span><span class="trek-meta-item">⛵ Lacustre</span><span class="trek-meta-item">🏠 Con refugio</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-media">Media</span>
+        <h3>Huella Andina — Villa Traful</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">A partir de USD 150 · hasta 4 personas</span>
+        <p>Tramo icónico de la Huella Andina conectando Villa La Angostura con Villa Traful. Varios días de inmersión total en la Patagonia profunda.</p>
+        <div class="trek-meta"><span class="trek-meta-item">⏱ Multi-jornada</span><span class="trek-meta-item">🗓 Dic–Abr</span></div>
+      </div>
+      <div class="trek-card">
+        <span class="trek-difficulty diff-alta">Alta</span>
+        <h3>Travesía: Buol, Cajón Negro & H. Andina</h3>
+        <p>La gran travesía de la zona: Cerro Buol + Cajón Negro enlazados por la Huella Andina. Expedición de varios días para quienes buscan la aventura patagónica completa.</p>
+        <div class="trek-meta"><span class="trek-meta-item">⏱ Multi-jornada</span><span class="trek-meta-item">🗓 Dic–Abr</span></div>
+      </div>
+    </div>
+
+    <div class="trek-discount-banner">
+      <div><svg width="36" height="36" viewBox="0 0 24 24" fill="#b08050" style="display:block; margin-bottom:0.5rem;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93C9.33 17.79 7 14.5 7 11V7.18L12 5z"/></svg></div>
+      <div class="trek-discount-text">
+        <h3>Descuento exclusivo para huéspedes LUAN</h3>
+        <p>Si te alojás en nuestra cabaña, accedés a precio especial en todas las salidas de trekking guiado. El mejor combo para vivir la Patagonia completa.</p>
+      </div>
+      <div class="trek-discount-badge">Precio<br>especial</div>
+    </div>
+
+    <!-- CARRUSEL TREKKING -->
+    <div style="margin-top:3rem; position:relative; border-radius:4px; overflow:hidden; background:var(--verde-oscuro);">
+      <div id="carrusel-trek" style="display:flex; transition:transform 0.45s ease; will-change:transform;">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.46.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.47.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.47%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.47%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.47%20(3).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.48.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.48%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.48%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.48%20(3).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.49.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.49%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.49%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.49%20(3).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.49%20(4).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.50.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.50%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.50%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.50%20(3).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.51%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.51%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.38.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.38%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.38%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.39.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.39%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.39%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.39%20(3).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.40.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.40%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.40%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.40%20(3).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.41.jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.41%20(1).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.41%20(2).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+        <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.24.41%20(3).jpeg" style="min-width:100%; width:100%; max-height:600px; object-fit:contain; display:block; background:#1a3010;" alt="Trekking Patagonia">
+      </div>
+      <button onclick="moverTrek(-1)" style="position:absolute; left:0.8rem; top:50%; transform:translateY(-50%); background:rgba(26,48,16,0.75); border:none; color:#c8ddb8; width:42px; height:42px; border-radius:50%; font-size:1.3rem; cursor:pointer; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px);">&#8249;</button>
+      <button onclick="moverTrek(1)" style="position:absolute; right:0.8rem; top:50%; transform:translateY(-50%); background:rgba(26,48,16,0.75); border:none; color:#c8ddb8; width:42px; height:42px; border-radius:50%; font-size:1.3rem; cursor:pointer; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px);">&#8250;</button>
+      <div id="contador-trek" style="position:absolute; bottom:0.8rem; right:1rem; background:rgba(26,48,16,0.7); color:#c8ddb8; font-size:0.72rem; padding:0.2rem 0.6rem; border-radius:2px; letter-spacing:0.08em;">1 / 35</div>
+      <div id="dots-trek" style="position:absolute; bottom:0.8rem; left:50%; transform:translateX(-50%); display:flex; gap:5px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAQUETES / BED & TREK -->
+<section id="paquetes">
+  <div class="section-inner">
+    <p class="section-tag">La experiencia completa</p>
+    <div class="sep"></div>
+    <h2 class="section-title">Bed & Trek</h2>
+    <p class="section-lead">Combinamos alojamiento y trekking en experiencias diseñadas para que no tengas que organizar nada — solo disfrutar.</p>
+
+    <div class="paquetes-grid">
+      <div class="paquete-card">
+        <div class="paquete-header">
+          <p class="paquete-dias">4 días · 3 noches</p>
+          <h3>Escape Patagónico</h3>
+          <p class="paquete-tagline">"Un escape corto, una conexión eterna con la Patagonia."</p>
+        </div>
+        <div class="paquete-body">
+          <ul>
+            <li>3 noches de alojamiento en la cabaña</li>
+            <li>2 salidas de trekking guiado a elección</li>
+            <li>Todos los almuerzos incluidos</li>
+            <li>Transporte privado hacia el aeropuerto</li>
+            <li>Guía de trekking con certificado AAGM</li>
+            <li>Asesoramiento previo en todo lo que necesitás</li>
+            <li>Primeros auxilios + comunicación VHF</li>
+          </ul>
+        </div>
+        <div class="paquete-footer">
+          <a href="#reserva" class="btn-primary" style="font-size:0.78rem; padding:0.7rem 1.5rem;">Consultar precio</a>
+        </div>
+      </div>
+
+      <div class="paquete-card">
+        <div class="paquete-header" style="background: var(--marron-oscuro);">
+          <p class="paquete-dias">8 días · 7 noches</p>
+          <h3>Semana Patagónica</h3>
+          <p class="paquete-tagline">"Una semana para sumergirte en la esencia de la Patagonia."</p>
+        </div>
+        <div class="paquete-body">
+          <ul>
+            <li>7 noches de alojamiento en la cabaña</li>
+            <li>4 salidas de trekking guiado a elección</li>
+            <li>Todos los almuerzos incluidos</li>
+            <li>Transporte privado hacia el aeropuerto</li>
+            <li>Guía de trekking con certificado AAGM</li>
+            <li>Asesoramiento previo en todo lo que necesitás</li>
+            <li>Primeros auxilios + comunicación VHF</li>
+          </ul>
+        </div>
+        <div class="paquete-footer">
+          <a href="#reserva" class="btn-primary" style="font-size:0.78rem; padding:0.7rem 1.5rem; background:var(--marron-medio);">Consultar precio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LUAN / NOSOTROS -->
+<section id="luan">
+  <div class="section-inner">
+    <div class="luan-grid">
+      <div class="luan-portrait">
+        <div class="luan-portrait-img" style="padding:0; overflow:hidden;">
+          <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.52%20(3).jpeg" style="width:100%; height:auto; object-fit:contain; display:block; border-radius:4px;" alt="Lucía y Andrés - LUAN Bed and Trek">
+          <div class="luan-badge">Guía habilitado<br>AAGM</div>
+        </div>
+        <div class="luan-frame"></div>
+      </div>
+
+      <div class="luan-content">
+        <p class="section-tag">Quiénes somos</p>
+        <div class="sep"></div>
+        <h2 class="section-title">Lucía & Andrés</h2>
+        <p>Somos pareja y socios de este nuevo camino. Disfrutamos mucho de la simpleza de la naturaleza y de sus desafíos, pero también amamos estar en casa y disfrutar de su tranquilidad. Trabajamos y nos esforzamos para convivir de la forma más amigable con nuestro ambiente.</p>
+        <p>Por eso nace LUAN, para transmitir y compartir con otros la vida que tanto disfrutamos: el hogar, la naturaleza y la aventura. Juntos creamos este espacio para que puedas desconectarte para reconectar.</p>
+        <p>Con años de experiencia en turismo y aventura, organizamos salidas de trekking adaptadas a todos los niveles. Los invitamos a que conozcan la magia que solo la Patagonia puede ofrecer.</p>
+
+        <div class="luan-valores">
+          <div class="valor-item">
+            <h4>Experiencia guiada</h4>
+            <p>Guía profesional con habilitación AAGM</p>
+          </div>
+          <div class="valor-item">
+            <h4>Respeto por el entorno</h4>
+            <p>Turismo responsable y de bajo impacto</p>
+          </div>
+          <div class="valor-item">
+            <h4>Trato personalizado</h4>
+            <p>Cada grupo es único, cada salida también</p>
+          </div>
+          <div class="valor-item">
+            <h4>Conexión real</h4>
+            <p>Con la naturaleza, los senderos y las personas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVA -->
+<section id="reserva">
+  <div class="reserva-inner">
+    <p class="section-tag">Contacto &amp; Reservas</p>
+    <div class="sep"></div>
+    <h2 class="section-title">Reservá tu experiencia</h2>
+    <p class="reserva-lead">Completá el formulario y nos comunicamos a la brevedad para confirmar disponibilidad y coordinar todos los detalles de tu estadía.</p>
+
+    <!-- DOS COLUMNAS: calendario + formulario -->
+    <div class="reserva-cols">
+
+      <!-- COLUMNA IZQUIERDA: Calendario -->
+      <div>
+        <p style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--verde-claro); font-weight:600; margin-bottom:1rem;">Disponibilidad</p>
+        <div style="border-radius:4px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+          <iframe src="https://calendar.google.com/calendar/embed?src=reservasluan%40gmail.com&ctz=America%2FArgentina%2FBuenos_Aires&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&bgcolor=%231a3010&color=%23B1440E"
+            style="border:0; width:100%; height:480px; display:block;"
+            frameborder="0"
+            scrolling="no">
+          </iframe>
+        </div>
+        <p style="font-size:0.75rem; color:rgba(248,244,238,0.4); margin-top:0.6rem; font-style:italic;">Los días marcados indican fechas reservadas.</p>
+      </div>
+
+      <!-- COLUMNA DERECHA: Formulario -->
+      <div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre completo">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="tu@email.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Fecha de llegada</label>
+          <input type="date">
+        </div>
+        <div class="form-group">
+          <label>Fecha de salida</label>
+          <input type="date">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Cantidad de personas</label>
+          <select>
+            <option>1 persona</option>
+            <option>2 personas</option>
+            <option>3 personas</option>
+            <option>4 personas</option>
+            <option>5 personas</option>
+            <option>6 personas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>¿Qué te interesa?</label>
+          <select>
+            <option value="" disabled selected>Seleccioná una opción</option>
+            <option>Solo alojamiento</option>
+            <option>Solo trekking</option>
+            <option>Escape Patagónico (4 días · 3 noches)</option>
+            <option>Semana Patagónica (8 días · 7 noches)</option>
+            <option>Otro / consulta personalizada</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Mensaje (opcional)</label>
+        <textarea placeholder="Contanos sobre tu grupo, intereses o preguntas..."></textarea>
+      </div>
+      <button class="form-submit" onclick="alert('¡Gracias! Nos comunicaremos pronto para confirmar tu reserva.')">Enviar consulta</button>
+    </div>
+      </div><!-- cierre columna derecha -->
+    </div><!-- cierre reserva-cols -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom:0.4rem;"><strong>LUAN</strong></p>
+  <p>Villa La Angostura, Neuquén · Patagonia Argentina</p>
+  <p style="margin-top:0.8rem; font-size:0.7rem; opacity:0.4;">© 2025 LUAN · Guía habilitado AAGM</p>
+</footer>
+
+
+<script>
+  const total = 13;
+  let actual = 0;
+  const dotsEl = document.getElementById('dots');
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('div');
+    d.style.cssText = 'width:6px; height:6px; border-radius:50%; background:rgba(200,221,184,0.4); cursor:pointer; transition:background 0.2s;';
+    d.addEventListener('click', () => irA(i));
+    dotsEl.appendChild(d);
+  }
+  function actualizarUI() {
+    document.getElementById('carrusel').style.transform = `translateX(-${actual * 100}%)`;
+    document.getElementById('contador').textContent = `${actual + 1} / ${total}`;
+    Array.from(dotsEl.children).forEach((d, i) => {
+      d.style.background = i === actual ? 'rgba(200,221,184,0.95)' : 'rgba(200,221,184,0.3)';
+    });
+  }
+  function moverCarrusel(dir) { actual = (actual + dir + total) % total; actualizarUI(); }
+  function irA(i) { actual = i; actualizarUI(); }
+  setInterval(() => moverCarrusel(1), 5000);
+  let touchStart = 0;
+  const el = document.getElementById('carrusel');
+  el.addEventListener('touchstart', e => touchStart = e.touches[0].clientX);
+  el.addEventListener('touchend', e => { const diff = touchStart - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) moverCarrusel(diff > 0 ? 1 : -1); });
+  // Carrusel Trek
+  const totalTrek = 35;
+  let actualTrek = 0;
+  const dotsTrekEl = document.getElementById('dots-trek');
+  for (let i = 0; i < totalTrek; i++) {
+    const d = document.createElement('div');
+    d.style.cssText = 'width:6px; height:6px; border-radius:50%; background:rgba(200,221,184,0.4); cursor:pointer; transition:background 0.2s;';
+    d.addEventListener('click', () => irATrek(i));
+    dotsTrekEl.appendChild(d);
+  }
+  function actualizarTrek() {
+    document.getElementById('carrusel-trek').style.transform = `translateX(-${actualTrek * 100}%)`;
+    document.getElementById('contador-trek').textContent = `${actualTrek + 1} / ${totalTrek}`;
+    Array.from(dotsTrekEl.children).forEach((d, i) => {
+      d.style.background = i === actualTrek ? 'rgba(200,221,184,0.95)' : 'rgba(200,221,184,0.3)';
+    });
+  }
+  function moverTrek(dir) { actualTrek = (actualTrek + dir + totalTrek) % totalTrek; actualizarTrek(); }
+  function irATrek(i) { actualTrek = i; actualizarTrek(); }
+  setInterval(() => moverTrek(1), 6000);
+  const elTrek = document.getElementById('carrusel-trek');
+  let touchStartTrek = 0;
+  elTrek.addEventListener('touchstart', e => touchStartTrek = e.touches[0].clientX);
+  elTrek.addEventListener('touchend', e => { const diff = touchStartTrek - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) moverTrek(diff > 0 ? 1 : -1); });
+  actualizarTrek();
+</script>
+</body>
+</html>
