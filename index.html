@@ -611,7 +611,6 @@
 
   .luan-portrait-img {
     width: 100%;
-    aspect-ratio: 3/4;
     background: var(--verde-oscuro);
     border-radius: 4px;
     overflow: hidden;
@@ -834,19 +833,17 @@
   }
   .lang-btn {
     background: none;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: rgba(248,244,238,0.6);
-    font-family: 'Lato', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    padding: 0.25rem 0.5rem;
-    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 1.3rem;
+    padding: 0.2rem 0.3rem;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.2s;
+    line-height: 1;
+    opacity: 0.6;
   }
-  .lang-btn:hover { border-color: rgba(255,255,255,0.5); color: var(--crema); }
-  .lang-btn.active { background: var(--marron-medio); border-color: var(--marron-medio); color: var(--crema); }
+  .lang-btn:hover { opacity: 1; border-color: rgba(255,255,255,0.4); }
+  .lang-btn.active { opacity: 1; border-color: var(--marron-medio); background: rgba(255,255,255,0.08); }
 </style>
 </head>
 <body>
@@ -862,9 +859,9 @@
     <li><a href="#reserva" class="nav-cta" data-i18n="nav_reservar">Reservar</a></li>
   </ul>
   <div class="lang-selector">
-    <button class="lang-btn active" onclick="setLang('es')">ES</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn active" onclick="setLang('es')" title="Español">🇦🇷</button>
+    <button class="lang-btn" onclick="setLang('en')" title="English">🇺🇸</button>
+    <button class="lang-btn" onclick="setLang('pt')" title="Português">🇧🇷</button>
   </div>
 </nav>
 
@@ -922,7 +919,7 @@
       <div>
         <h2 class="section-title" data-i18n="bed_title">La Cabaña</h2>
         <p class="section-lead" data-i18n="bed_lead">Un refugio en el jardín de nuestra casa, diseñado para que te sientas en hogar. Con 2 habitaciones en suite conectadas con un living-cocina.</p>
-        <p style="font-size:0.9rem; color:var(--texto-suave); margin-bottom:1.5rem;"><span data-i18n="bed_desc">La casa tiene una planta de 54m² con vista al Cerro O'Connor, situada a 5 km del centro de Villa La Angostura y a 2 km del acceso al Cerro Bayo. Dos habitaciones de 18m² tipo loft con entrepiso y baño privado, comunicadas a través de un living-cocina — ideal para compartir momentos en grupo.</span></p>
+        <p style="font-size:0.9rem; color:var(--texto-suave); margin-bottom:1.5rem;"><span data-i18n="bed_desc">La casa tiene una planta de 54m² con vista al Cerro O\'Connor, situada a 5 km del centro de Villa La Angostura y a 2 km del acceso al Cerro Bayo. Dos habitaciones de 18m² tipo loft con entrepiso y baño privado, comunicadas a través de un living-cocina — ideal para compartir momentos en grupo.</span></p>
 
         <div class="amenities">
           <div class="amenity">
@@ -1052,7 +1049,7 @@
       <div class="trek-card">
         <span class="trek-difficulty diff-media">Media</span>
         <h3>Cajón Negro</h3>
-        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
         <p>Recorrido por un estrecho cañón entre paredes de roca y bosque nativo. Un paisaje único y muy recompensante.</p>
         <div class="trek-meta"><span class="trek-meta-item">↔ 14 km</span><span class="trek-meta-item">⏱ 4–7 hs</span></div>
       </div>
@@ -1066,14 +1063,14 @@
       <div class="trek-card">
         <span class="trek-difficulty diff-media">Media</span>
         <h3>Cruz del Falso Filo Belvedere</h3>
-        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
         <p>Variante del clásico Belvedere hasta una cruz con vistas panorámicas. Menos exigente que la cumbre completa, pero con paisajes igualmente impactantes.</p>
         <div class="trek-meta"><span class="trek-meta-item">↔ 11 km</span><span class="trek-meta-item">⏱ 4–8 hs</span></div>
       </div>
       <div class="trek-card">
         <span class="trek-difficulty diff-media">Media</span>
         <h3>Cerro Tres Monjes</h3>
-        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 120 · hasta 4 personas</span>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
         <p>Tres cimas características sobre el bosque patagónico. Sendero con buenas vistas al lago y la cordillera.</p>
         <div class="trek-meta"><span class="trek-meta-item">↔ 8 km</span><span class="trek-meta-item">⏱ 3–5 hs</span></div>
       </div>
@@ -1117,34 +1114,34 @@
       <div class="trek-card">
         <span class="trek-difficulty diff-alta">Alta</span>
         <h3>Cerro Falkner</h3>
-        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 150 · hasta 4 personas</span>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 160 · hasta 4 personas</span>
         <p>Ubicado más lejos sobre la Ruta de los 7 Lagos. Sendero corto pero empinado y rocoso. Para quienes buscan un verdadero desafío de montaña con vistas extraordinarias.</p>
         <div class="trek-meta"><span class="trek-meta-item">↔ 9 km</span><span class="trek-meta-item">⏱ 5–7 hs</span></div>
       </div>
 
     </div>
 
-    <h3 style="font-family:'Cormorant Garamond',Georgia,serif; color:var(--verde-palido); font-size:1.1rem; letter-spacing:0.15em; text-transform:uppercase; margin:3.5rem 0 1.5rem; font-weight:400;"><span data-i18n="trek_noche">Travesías con noche</span></h3>
+    <h3 style="font-family:'Cormorant Garamond',Georgia,serif; color:var(--verde-palido); font-size:1.1rem; letter-spacing:0.15em; text-transform:uppercase; margin:3.5rem 0 1.5rem; font-weight:400;"><span data-i18n="trek_noche">Travesías con noche</span> <span style="font-size:0.75rem; font-weight:400; color:rgba(200,221,184,0.5); text-transform:none; letter-spacing:0; font-style:italic;">· No incluye carpa ni bolsa de dormir (disponible con costo extra)</span></h3>
 
     <div class="trek-grid">
       <div class="trek-card">
         <span class="trek-difficulty diff-media">Media</span>
         <h3>Cerro Dormilón 🏠</h3>
-        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">A partir de USD 150 · hasta 4 personas</span>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 250 · hasta 4 personas (incluye comidas)</span>
         <p>Acceso en lancha cruzando el brazo Rincón del Nahuel Huapi. Ascenso al refugio histórico del Club Andino (1933). Noche en refugio incluida.</p>
         <div class="trek-meta"><span class="trek-meta-item">↔ 12 km</span><span class="trek-meta-item">⛵ Lacustre</span><span class="trek-meta-item">🏠 Con refugio</span></div>
       </div>
       <div class="trek-card">
         <span class="trek-difficulty diff-media">Media</span>
         <h3>Cerro Colorado 🏠</h3>
-        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">A partir de USD 150 · hasta 4 personas</span>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 250 · hasta 4 personas (incluye comidas)</span>
         <p>Acceso en lancha desde Puerto Manzano. Vistas panorámicas 360° al Nahuel Huapi, el Tronador y el Lanín. Noche en refugio disponible.</p>
         <div class="trek-meta"><span class="trek-meta-item">↔ 7 km</span><span class="trek-meta-item">⏱ 3–6 hs</span><span class="trek-meta-item">⛵ Lacustre</span><span class="trek-meta-item">🏠 Con refugio</span></div>
       </div>
       <div class="trek-card">
         <span class="trek-difficulty diff-media">Media</span>
         <h3>Huella Andina — Villa Traful</h3>
-        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">A partir de USD 150 · hasta 4 personas</span>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 250 · hasta 4 personas (incluye comidas)</span>
         <p>Tramo icónico de la Huella Andina conectando Villa La Angostura con Villa Traful. Varios días de inmersión total en la Patagonia profunda.</p>
         <div class="trek-meta"><span class="trek-meta-item">⏱ Multi-jornada</span><span class="trek-meta-item">🗓 Dic–Abr</span></div>
       </div>
@@ -1275,7 +1272,7 @@
       <div class="luan-portrait">
         <div class="luan-portrait-img" style="padding:0; overflow:hidden;">
           <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.52%20(3).jpeg" style="width:100%; height:auto; object-fit:contain; display:block; border-radius:4px;" alt="Lucía y Andrés - LUAN Bed and Trek">
-          <div class="luan-badge" data-i18n="luan_badge">Guía habilitado<br>AAGM</div>
+          <div class="luan-badge" data-i18n="luan_badge">Guía habilitado AAGM</div>
         </div>
         <div class="luan-frame"></div>
       </div>
@@ -1335,57 +1332,85 @@
         <p style="font-size:0.75rem; color:rgba(248,244,238,0.4); margin-top:0.6rem; font-style:italic;" data-i18n="cal_note">Los días marcados indican fechas reservadas.</p>
       </div>
 
-      <!-- COLUMNA DERECHA: Formulario -->
+      <!-- COLUMNA DERECHA: Formulario con calculadora -->
       <div>
       <div class="form-row">
         <div class="form-group">
           <label data-i18n="form_nombre">Nombre</label>
-          <input type="text" data-i18n-placeholder="form_nombre_ph" placeholder="Tu nombre completo">
+          <input type="text" id="f-nombre" data-i18n-placeholder="form_nombre_ph" placeholder="Tu nombre completo">
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" id="f-email" placeholder="tu@email.com">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label data-i18n="form_llegada">Fecha de llegada</label>
-          <input type="date">
+          <input type="date" id="f-llegada" onchange="calcularTotal()">
         </div>
         <div class="form-group">
           <label data-i18n="form_salida">Fecha de salida</label>
-          <input type="date">
+          <input type="date" id="f-salida" onchange="calcularTotal()">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label data-i18n="form_personas">Cantidad de personas</label>
-          <select>
-            <option>1 persona</option>
-            <option>2 personas</option>
-            <option>3 personas</option>
-            <option>4 personas</option>
-            <option>5 personas</option>
-            <option>6 personas</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label data-i18n="form_interes">¿Qué te interesa?</label>
-          <select>
-            <option value="" disabled selected>Seleccioná una opción</option>
-            <option>Solo alojamiento</option>
-            <option>Solo trekking</option>
-            <option>Escape Patagónico (4 días · 3 noches)</option>
-            <option>Semana Patagónica (8 días · 7 noches)</option>
-            <option>Otro / consulta personalizada</option>
+          <select id="f-personas" onchange="calcularTotal()">
+            <option value="1">1 persona</option>
+            <option value="2">2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+            <option value="5">5 personas</option>
+            <option value="6">6 personas</option>
           </select>
         </div>
       </div>
+
+      <!-- SELECTOR DE SERVICIOS TIPO CARRITO -->
+      <div style="margin-bottom:1rem;">
+        <label style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--verde-claro); display:block; margin-bottom:0.8rem;" data-i18n="form_interes">¿Qué te interesa?</label>
+        <div style="display:flex; flex-direction:column; gap:0.5rem;">
+          <label style="display:flex; align-items:center; gap:0.7rem; cursor:pointer; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'">
+            <input type="checkbox" id="opt-cabana" onchange="calcularTotal()" style="width:16px; height:16px; accent-color:#b08050;">
+            <span style="font-size:0.88rem; color:var(--crema);">🏠 Alojamiento en la cabaña</span>
+            <span id="precio-cabana" style="margin-left:auto; font-size:0.8rem; color:#c8a870; font-weight:600;"></span>
+          </label>
+          <label style="display:flex; align-items:center; gap:0.7rem; cursor:pointer; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'">
+            <input type="checkbox" id="opt-trek-medio" onchange="calcularTotal()" style="width:16px; height:16px; accent-color:#b08050;">
+            <span style="font-size:0.88rem; color:var(--crema);">🥾 Trekking medio día</span>
+            <span style="margin-left:auto; font-size:0.8rem; color:#c8a870; font-weight:600;">USD 120</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:0.7rem; cursor:pointer; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'">
+            <input type="checkbox" id="opt-trek-dia" onchange="calcularTotal()" style="width:16px; height:16px; accent-color:#b08050;">
+            <span style="font-size:0.88rem; color:var(--crema);">🥾 Trekking día completo</span>
+            <span style="margin-left:auto; font-size:0.8rem; color:#c8a870; font-weight:600;">USD 150</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:0.7rem; cursor:pointer; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'">
+            <input type="checkbox" id="opt-trek-noche" onchange="calcularTotal()" style="width:16px; height:16px; accent-color:#b08050;">
+            <span style="font-size:0.88rem; color:var(--crema);">⛺ Travesía con noche <span style="font-size:0.75rem; color:rgba(248,244,238,0.4);">(incluye comidas)</span></span>
+            <span style="margin-left:auto; font-size:0.8rem; color:#c8a870; font-weight:600;">USD 250</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- RESUMEN DE PRECIOS -->
+      <div id="resumen-precios" style="display:none; background:rgba(176,128,80,0.1); border:1px solid rgba(176,128,80,0.3); border-radius:4px; padding:1rem 1.2rem; margin-bottom:1rem;">
+        <p style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:#c8a870; margin-bottom:0.8rem; font-weight:600;">Resumen</p>
+        <div id="resumen-items" style="display:flex; flex-direction:column; gap:0.4rem;"></div>
+        <div style="border-top:1px solid rgba(176,128,80,0.3); margin-top:0.8rem; padding-top:0.8rem; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.85rem; color:var(--crema); font-weight:600;">Total estimado</span>
+          <span id="total-precio" style="font-size:1.2rem; color:#c8a870; font-weight:700; font-family:'Cormorant Garamond',Georgia,serif;"></span>
+        </div>
+        <p style="font-size:0.7rem; color:rgba(248,244,238,0.35); margin-top:0.5rem; font-style:italic;">Precios en USD · Se puede pagar en $ al cambio del día de la reserva</p>
+      </div>
+
       <div class="form-group">
         <label data-i18n="form_mensaje">Mensaje (opcional)</label>
-        <textarea data-i18n-placeholder="form_mensaje_ph" placeholder="Contanos sobre tu grupo, intereses o preguntas..."></textarea>
+        <textarea id="f-mensaje" data-i18n-placeholder="form_mensaje_ph" placeholder="Contanos sobre tu grupo, intereses o preguntas..."></textarea>
       </div>
-      <button class="form-submit" data-i18n="res_btn" onclick="alert('¡Gracias! Nos comunicaremos pronto para confirmar tu reserva.')">Enviar consulta</button>
+      <button class="form-submit" data-i18n="res_btn" onclick="enviarConsulta()">Enviar consulta</button>
     </div>
       </div><!-- cierre columna derecha -->
     </div><!-- cierre reserva-cols -->
@@ -1454,170 +1479,245 @@
 <script>
 const translations = {
   es: {
-    nav_cabana: 'Cabaña', nav_trek: 'Trek', nav_paquetes: 'Bed & Trek',
-    nav_nosotros: 'Nosotros', nav_reservar: 'Reservar',
-    hero_eyebrow: 'Villa La Angostura · Patagonia Argentina',
-    hero_desc: 'Un proyecto que nace desde el corazón, inspirado en tres elementos fundamentales: hogar, naturaleza y aventura. Una experiencia única para conectarte con la belleza de la Patagonia.',
-    hero_btn1: 'Consultar disponibilidad', hero_btn2: 'Ver salidas de trekking',
-    loc_ciudad: 'Villa La Angostura, Neuquén', loc_personas: 'Hasta 6 personas',
-    loc_guia: 'Guía habilitado AAGM', loc_parque: 'Parque Nacional Nahuel Huapi',
-    bed_tag: 'Alojamiento', bed_title: 'La Cabaña',
-    bed_lead: 'Un refugio en el jardín de nuestra casa, diseñado para que te sientas en hogar. Con 2 habitaciones en suite conectadas con un living-cocina.',
-    bed_desc: 'La casa tiene una planta de 54m² con vista al Cerro O'Connor, situada a 5 km del centro de Villa La Angostura y a 2 km del acceso al Cerro Bayo. Dos habitaciones de 18m² tipo loft con entrepiso y baño privado, comunicadas a través de un living-cocina — ideal para compartir momentos en grupo.',
-    bed_capacity: 'personas máximo', bed_card_title: '2 habitaciones iguales · hasta 3 personas c/u',
-    am1_title: 'Cocina completa', am1_desc: 'Salón-cocina compartido equipado',
-    am2_title: 'Smart TV + Wi-Fi', am2_desc: 'Entretenimiento y conectividad',
-    am3_title: 'Parrilla & exterior', am3_desc: 'Mesa y sillas de exterior',
-    am4_title: 'Ropa blanca', am4_desc: 'Incluida en ambas habitaciones',
-    am5_title: 'Descuento trekking', am5_desc: 'Precio especial en salidas guiadas',
-    trek_tag: 'Salidas de trekking', trek_title: 'Explorá la Patagonia',
-    trek_lead: 'Senderos para todos los niveles, guiados por Andrés — guía habilitado AAGM. Cada ruta, una postal distinta del lago Nahuel Huapi y la cordillera.',
-    trek_dia: 'Salidas de día', trek_noche: 'Travesías con noche',
-    trek_discount_title: 'Descuento exclusivo para huéspedes LUAN',
-    trek_discount_desc: 'Si te alojás en nuestra cabaña, accedés a precio especial en todas las salidas de trekking guiado. El mejor combo para vivir la Patagonia completa.',
-    trek_discount_badge: 'Precio especial',
-    paq_tag: 'La experiencia completa', paq_lead: 'Combinamos alojamiento y trekking en experiencias diseñadas para que no tengas que organizar nada — solo disfrutar.',
-    paq1_dias: '4 días · 3 noches', paq1_title: 'Escape Patagónico',
-    paq1_tagline: '"Un escape corto, una conexión eterna con la Patagonia."',
-    paq1_i1: '3 noches de alojamiento en la cabaña', paq1_i2: '2 salidas de trekking guiado a elección',
-    paq2_dias: '8 días · 7 noches', paq2_title: 'Semana Patagónica',
-    paq2_tagline: '"Una semana para sumergirte en la esencia de la Patagonia."',
-    paq2_i1: '7 noches de alojamiento en la cabaña', paq2_i2: '4 salidas de trekking guiado a elección',
-    luan_tag: 'Quiénes somos', luan_title: 'Lucía & Andrés', luan_badge: 'Guía habilitado\nAAGM',
-    luan_p1: 'Somos pareja y socios de este nuevo camino. Disfrutamos mucho de la simpleza de la naturaleza y de sus desafíos, pero también amamos estar en casa y disfrutar de su tranquilidad. Trabajamos y nos esforzamos para convivir de la forma más amigable con nuestro ambiente.',
-    luan_p2: 'Por eso nace LUAN, para transmitir y compartir con otros la vida que tanto disfrutamos: el hogar, la naturaleza y la aventura. Juntos creamos este espacio para que puedas desconectarte para reconectar.',
-    luan_p3: 'Con años de experiencia en turismo y aventura, organizamos salidas de trekking adaptadas a todos los niveles. Los invitamos a que conozcan la magia que solo la Patagonia puede ofrecer.',
-    val1_title: 'Experiencia guiada', val1_desc: 'Guía profesional con habilitación AAGM',
-    val2_title: 'Respeto por el entorno', val2_desc: 'Turismo responsable y de bajo impacto',
-    val3_title: 'Trato personalizado', val3_desc: 'Cada grupo es único, cada salida también',
-    val4_title: 'Conexión real', val4_desc: 'Con la naturaleza, los senderos y las personas',
-    res_tag: 'Contacto & Reservas', res_title: 'Reservá tu experiencia',
-    res_lead: 'Completá el formulario y nos comunicamos a la brevedad para confirmar disponibilidad y coordinar todos los detalles de tu estadía.',
-    cal_title: 'Disponibilidad', cal_note: 'Los días marcados indican fechas reservadas.',
-    form_nombre: 'Nombre', form_nombre_ph: 'Tu nombre completo',
-    form_llegada: 'Fecha de llegada', form_salida: 'Fecha de salida',
-    form_personas: 'Cantidad de personas', form_interes: '¿Qué te interesa?',
-    form_mensaje: 'Mensaje (opcional)', form_mensaje_ph: 'Contanos sobre tu grupo, intereses o preguntas...',
-    res_btn: 'Enviar consulta',
-    footer_loc: 'Villa La Angostura, Neuquén · Patagonia Argentina',
+    nav_cabana: "Cabaña", nav_trek: "Trek", nav_paquetes: "Bed & Trek",
+    nav_nosotros: "Nosotros", nav_reservar: "Reservar",
+    hero_eyebrow: "Villa La Angostura · Patagonia Argentina",
+    hero_desc: "Un proyecto que nace desde el corazón, inspirado en tres elementos fundamentales: hogar, naturaleza y aventura. Una experiencia única para conectarte con la belleza de la Patagonia.",
+    hero_btn1: "Consultar disponibilidad", hero_btn2: "Ver salidas de trekking",
+    loc_ciudad: "Villa La Angostura, Neuquén", loc_personas: "Hasta 6 personas",
+    loc_guia: "Guía habilitado AAGM", loc_parque: "Parque Nacional Nahuel Huapi",
+    bed_tag: "Alojamiento", bed_title: "La Cabaña",
+    bed_lead: "Un refugio en el jardín de nuestra casa, diseñado para que te sientas en hogar. Con 2 habitaciones en suite conectadas con un living-cocina.",
+    bed_desc: "La casa tiene una planta de 54m² con vista al Cerro O'Connor, situada a 5 km del centro de Villa La Angostura y a 2 km del acceso al Cerro Bayo. Dos habitaciones de 18m² tipo loft con entrepiso y baño privado, comunicadas a través de un living-cocina — ideal para compartir momentos en grupo.",
+    bed_capacity: "personas máximo", bed_card_title: "2 habitaciones iguales · hasta 3 personas c/u",
+    am1_title: "Cocina completa", am1_desc: "Salón-cocina compartido equipado",
+    am2_title: "Smart TV + Wi-Fi", am2_desc: "Entretenimiento y conectividad",
+    am3_title: "Parrilla & exterior", am3_desc: "Mesa y sillas de exterior",
+    am4_title: "Ropa blanca", am4_desc: "Incluida en ambas habitaciones",
+    am5_title: "Descuento trekking", am5_desc: "Precio especial en salidas guiadas",
+    trek_tag: "Salidas de trekking", trek_title: "Explorá la Patagonia",
+    trek_lead: "Senderos para todos los niveles, guiados por Andrés — guía habilitado AAGM. Cada ruta, una postal distinta del lago Nahuel Huapi y la cordillera.",
+    trek_dia: "Salidas de día", trek_noche: "Travesías con noche",
+    trek_discount_title: "Descuento exclusivo para huéspedes LUAN",
+    trek_discount_desc: "Si te alojás en nuestra cabaña, accedés a precio especial en todas las salidas de trekking guiado. El mejor combo para vivir la Patagonia completa.",
+    trek_discount_badge: "Precio especial",
+    paq_tag: "La experiencia completa", paq_lead: "Combinamos alojamiento y trekking en experiencias diseñadas para que no tengas que organizar nada — solo disfrutar.",
+    paq1_dias: "4 días · 3 noches", paq1_title: "Escape Patagónico",
+    paq1_tagline: "Un escape corto, una conexión eterna con la Patagonia.",
+    paq1_i1: "3 noches de alojamiento en la cabaña", paq1_i2: "2 salidas de trekking guiado a elección",
+    paq2_dias: "8 días · 7 noches", paq2_title: "Semana Patagónica",
+    paq2_tagline: "Una semana para sumergirte en la esencia de la Patagonia.",
+    paq2_i1: "7 noches de alojamiento en la cabaña", paq2_i2: "4 salidas de trekking guiado a elección",
+    luan_tag: "Quiénes somos", luan_title: "Lucía & Andrés", luan_badge: "Guía habilitado AAGM",
+    luan_p1: "Somos pareja y socios de este nuevo camino. Disfrutamos mucho de la simpleza de la naturaleza y de sus desafíos, pero también amamos estar en casa y disfrutar de su tranquilidad. Trabajamos y nos esforzamos para convivir de la forma más amigable con nuestro ambiente.",
+    luan_p2: "Por eso nace LUAN, para transmitir y compartir con otros la vida que tanto disfrutamos: el hogar, la naturaleza y la aventura. Juntos creamos este espacio para que puedas desconectarte para reconectar.",
+    luan_p3: "Con años de experiencia en turismo y aventura, organizamos salidas de trekking adaptadas a todos los niveles. Los invitamos a que conozcan la magia que solo la Patagonia puede ofrecer.",
+    val1_title: "Experiencia guiada", val1_desc: "Guía profesional con habilitación AAGM",
+    val2_title: "Respeto por el entorno", val2_desc: "Turismo responsable y de bajo impacto",
+    val3_title: "Trato personalizado", val3_desc: "Cada grupo es único, cada salida también",
+    val4_title: "Conexión real", val4_desc: "Con la naturaleza, los senderos y las personas",
+    res_tag: "Contacto & Reservas", res_title: "Reservá tu experiencia",
+    res_lead: "Completá el formulario y nos comunicamos a la brevedad para confirmar disponibilidad y coordinar todos los detalles de tu estadía.",
+    cal_title: "Disponibilidad", cal_note: "Los días marcados indican fechas reservadas.",
+    form_nombre: "Nombre", form_nombre_ph: "Tu nombre completo",
+    form_llegada: "Fecha de llegada", form_salida: "Fecha de salida",
+    form_personas: "Cantidad de personas", form_interes: "¿Qué te interesa?",
+    form_mensaje: "Mensaje (opcional)", form_mensaje_ph: "Contanos sobre tu grupo, intereses o preguntas...",
+    res_btn: "Enviar consulta",
+    footer_loc: "Villa La Angostura, Neuquén · Patagonia Argentina",
   },
   en: {
-    nav_cabana: 'Cabin', nav_trek: 'Trek', nav_paquetes: 'Bed & Trek',
-    nav_nosotros: 'About us', nav_reservar: 'Book now',
-    hero_eyebrow: 'Villa La Angostura · Patagonia Argentina',
-    hero_desc: 'A project born from the heart, inspired by three fundamental elements: home, nature and adventure. A unique experience to connect with the beauty of Patagonia.',
-    hero_btn1: 'Check availability', hero_btn2: 'View trekking tours',
-    loc_ciudad: 'Villa La Angostura, Neuquén', loc_personas: 'Up to 6 guests',
-    loc_guia: 'AAGM certified guide', loc_parque: 'Nahuel Huapi National Park',
-    bed_tag: 'Accommodation', bed_title: 'The Cabin',
-    bed_lead: 'A retreat in the garden of our home, designed to make you feel at home. With 2 en-suite rooms connected by a living-kitchen.',
-    bed_desc: 'The property spans 54m² with views of Cerro O'Connor, located 5 km from the centre of Villa La Angostura and 2 km from the Cerro Bayo access. Two 18m² loft-style rooms with mezzanine and private bathroom, connected through a shared living-kitchen — perfect for groups who want to share moments while keeping their own space.',
-    bed_capacity: 'guests maximum', bed_card_title: '2 identical rooms · up to 3 guests each',
-    am1_title: 'Full kitchen', am1_desc: 'Fully equipped shared living-kitchen',
-    am2_title: 'Smart TV + Wi-Fi', am2_desc: 'Entertainment and connectivity',
-    am3_title: 'BBQ & outdoor', am3_desc: 'Outdoor table and chairs',
-    am4_title: 'Bed linen', am4_desc: 'Included in both rooms',
-    am5_title: 'Trekking discount', am5_desc: 'Special price on guided tours',
-    trek_tag: 'Trekking tours', trek_title: 'Explore Patagonia',
-    trek_lead: 'Trails for all levels, guided by Andrés — AAGM certified guide. Every route, a different postcard of Lake Nahuel Huapi and the Andes.',
-    trek_dia: 'Day hikes', trek_noche: 'Overnight treks',
-    trek_discount_title: 'Exclusive discount for LUAN guests',
-    trek_discount_desc: 'If you stay at our cabin, you get a special price on all guided trekking tours. The best combo to experience Patagonia in full.',
-    trek_discount_badge: 'Special price',
-    paq_tag: 'The complete experience', paq_lead: 'We combine accommodation and trekking in experiences designed so you don't have to organise anything — just enjoy.',
-    paq1_dias: '4 days · 3 nights', paq1_title: 'Patagonian Escape',
-    paq1_tagline: '"A short escape, an eternal connection with Patagonia."',
-    paq1_i1: '3 nights accommodation in the cabin', paq1_i2: '2 guided trekking tours of your choice',
-    paq2_dias: '8 days · 7 nights', paq2_title: 'Patagonian Week',
-    paq2_tagline: '"A week to immerse yourself in the essence of Patagonia."',
-    paq2_i1: '7 nights accommodation in the cabin', paq2_i2: '4 guided trekking tours of your choice',
-    luan_tag: 'About us', luan_title: 'Lucía & Andrés', luan_badge: 'AAGM certified\nguide',
-    luan_p1: 'We are a couple and partners on this new journey. We deeply enjoy the simplicity of nature and its challenges, but we also love being home and enjoying its peace. We work hard to live in the most friendly way with our environment.',
-    luan_p2: 'That is why LUAN was born — to share with others the life we enjoy so much: home, nature and adventure. Together we created this space so you can disconnect to reconnect.',
-    luan_p3: 'With years of experience in adventure tourism, we organise trekking tours adapted to all skill levels. We invite you to discover the magic that only Patagonia can offer.',
-    val1_title: 'Guided experience', val1_desc: 'Professional guide with AAGM certification',
-    val2_title: 'Respect for nature', val2_desc: 'Responsible, low-impact tourism',
-    val3_title: 'Personal approach', val3_desc: 'Every group is unique, every outing too',
-    val4_title: 'Real connection', val4_desc: 'With nature, the trails and the people',
-    res_tag: 'Contact & Bookings', res_title: 'Book your experience',
-    res_lead: 'Fill in the form and we will get back to you shortly to confirm availability and arrange all the details of your stay.',
-    cal_title: 'Availability', cal_note: 'Marked days indicate reserved dates.',
-    form_nombre: 'Name', form_nombre_ph: 'Your full name',
-    form_llegada: 'Check-in date', form_salida: 'Check-out date',
-    form_personas: 'Number of guests', form_interes: 'What are you interested in?',
-    form_mensaje: 'Message (optional)', form_mensaje_ph: 'Tell us about your group, interests or questions...',
-    res_btn: 'Send enquiry',
-    footer_loc: 'Villa La Angostura, Neuquén · Patagonia Argentina',
+    nav_cabana: "Cabin", nav_trek: "Trek", nav_paquetes: "Bed & Trek",
+    nav_nosotros: "About us", nav_reservar: "Book now",
+    hero_eyebrow: "Villa La Angostura · Patagonia Argentina",
+    hero_desc: "A project born from the heart, inspired by three fundamental elements: home, nature and adventure. A unique experience to connect with the beauty of Patagonia.",
+    hero_btn1: "Check availability", hero_btn2: "View trekking tours",
+    loc_ciudad: "Villa La Angostura, Neuquén", loc_personas: "Up to 6 guests",
+    loc_guia: "AAGM certified guide", loc_parque: "Nahuel Huapi National Park",
+    bed_tag: "Accommodation", bed_title: "The Cabin",
+    bed_lead: "A retreat in the garden of our home, designed to make you feel at home. With 2 en-suite rooms connected by a living-kitchen.",
+    bed_desc: "The property spans 54m² with views of Cerro O'Connor, located 5 km from the centre of Villa La Angostura and 2 km from the Cerro Bayo access. Two 18m² loft-style rooms with mezzanine and private bathroom, connected through a shared living-kitchen — perfect for groups who want to share moments while keeping their own space.",
+    bed_capacity: "guests maximum", bed_card_title: "2 identical rooms · up to 3 guests each",
+    am1_title: "Full kitchen", am1_desc: "Fully equipped shared living-kitchen",
+    am2_title: "Smart TV + Wi-Fi", am2_desc: "Entertainment and connectivity",
+    am3_title: "BBQ & outdoor", am3_desc: "Outdoor table and chairs",
+    am4_title: "Bed linen", am4_desc: "Included in both rooms",
+    am5_title: "Trekking discount", am5_desc: "Special price on guided tours",
+    trek_tag: "Trekking tours", trek_title: "Explore Patagonia",
+    trek_lead: "Trails for all levels, guided by Andrés — AAGM certified guide. Every route, a different postcard of Lake Nahuel Huapi and the Andes.",
+    trek_dia: "Day hikes", trek_noche: "Overnight treks",
+    trek_discount_title: "Exclusive discount for LUAN guests",
+    trek_discount_desc: "If you stay at our cabin, you get a special price on all guided trekking tours. The best combo to experience Patagonia in full.",
+    trek_discount_badge: "Special price",
+    paq_tag: "The complete experience", paq_lead: "We combine accommodation and trekking in experiences designed so you don't have to organise anything — just enjoy.",
+    paq1_dias: "4 days · 3 nights", paq1_title: "Patagonian Escape",
+    paq1_tagline: "A short escape, an eternal connection with Patagonia.",
+    paq1_i1: "3 nights accommodation in the cabin", paq1_i2: "2 guided trekking tours of your choice",
+    paq2_dias: "8 days · 7 nights", paq2_title: "Patagonian Week",
+    paq2_tagline: "A week to immerse yourself in the essence of Patagonia.",
+    paq2_i1: "7 nights accommodation in the cabin", paq2_i2: "4 guided trekking tours of your choice",
+    luan_tag: "About us", luan_title: "Lucía & Andrés", luan_badge: "AAGM certified guide",
+    luan_p1: "We are a couple and partners on this new journey. We deeply enjoy the simplicity of nature and its challenges, but we also love being home and enjoying its peace. We work hard to live in the most friendly way with our environment.",
+    luan_p2: "That is why LUAN was born — to share with others the life we enjoy so much: home, nature and adventure. Together we created this space so you can disconnect to reconnect.",
+    luan_p3: "With years of experience in adventure tourism, we organise trekking tours adapted to all skill levels. We invite you to discover the magic that only Patagonia can offer.",
+    val1_title: "Guided experience", val1_desc: "Professional guide with AAGM certification",
+    val2_title: "Respect for nature", val2_desc: "Responsible, low-impact tourism",
+    val3_title: "Personal approach", val3_desc: "Every group is unique, every outing too",
+    val4_title: "Real connection", val4_desc: "With nature, the trails and the people",
+    res_tag: "Contact & Bookings", res_title: "Book your experience",
+    res_lead: "Fill in the form and we will get back to you shortly to confirm availability and arrange all the details of your stay.",
+    cal_title: "Availability", cal_note: "Marked days indicate reserved dates.",
+    form_nombre: "Name", form_nombre_ph: "Your full name",
+    form_llegada: "Check-in date", form_salida: "Check-out date",
+    form_personas: "Number of guests", form_interes: "What are you interested in?",
+    form_mensaje: "Message (optional)", form_mensaje_ph: "Tell us about your group, interests or questions...",
+    res_btn: "Send enquiry",
+    footer_loc: "Villa La Angostura, Neuquén · Patagonia Argentina",
   },
   pt: {
-    nav_cabana: 'Cabana', nav_trek: 'Trek', nav_paquetes: 'Bed & Trek',
-    nav_nosotros: 'Sobre nós', nav_reservar: 'Reservar',
-    hero_eyebrow: 'Villa La Angostura · Patagônia Argentina',
-    hero_desc: 'Um projeto que nasce do coração, inspirado em três elementos fundamentais: lar, natureza e aventura. Uma experiência única para se conectar com a beleza da Patagônia.',
-    hero_btn1: 'Verificar disponibilidade', hero_btn2: 'Ver trilhas de trekking',
-    loc_ciudad: 'Villa La Angostura, Neuquén', loc_personas: 'Até 6 pessoas',
-    loc_guia: 'Guia habilitado AAGM', loc_parque: 'Parque Nacional Nahuel Huapi',
-    bed_tag: 'Hospedagem', bed_title: 'A Cabana',
-    bed_lead: 'Um refúgio no jardim da nossa casa, projetado para que você se sinta em casa. Com 2 quartos em suite conectados por uma cozinha-sala.',
-    bed_desc: 'A propriedade tem 54m² com vista para o Cerro O'Connor, situada a 5 km do centro de Villa La Angostura e a 2 km do acesso ao Cerro Bayo. Dois quartos de 18m² estilo loft com mezanino e banheiro privativo, comunicados por uma cozinha-sala compartilhada — ideal para grupos que querem compartilhar momentos sem perder seu espaço.',
-    bed_capacity: 'pessoas no máximo', bed_card_title: '2 quartos iguais · até 3 pessoas cada',
-    am1_title: 'Cozinha completa', am1_desc: 'Cozinha-sala compartilhada equipada',
-    am2_title: 'Smart TV + Wi-Fi', am2_desc: 'Entretenimento e conectividade',
-    am3_title: 'Churrasqueira & exterior', am3_desc: 'Mesa e cadeiras externas',
-    am4_title: 'Roupa de cama', am4_desc: 'Incluída em ambos os quartos',
-    am5_title: 'Desconto trekking', am5_desc: 'Preço especial nas saídas guiadas',
-    trek_tag: 'Saídas de trekking', trek_title: 'Explore a Patagônia',
-    trek_lead: 'Trilhas para todos os níveis, guiadas por Andrés — guia habilitado AAGM. Cada rota, um cartão-postal diferente do Lago Nahuel Huapi e da cordilheira.',
-    trek_dia: 'Saídas de dia', trek_noche: 'Travessias com pernoite',
-    trek_discount_title: 'Desconto exclusivo para hóspedes LUAN',
-    trek_discount_desc: 'Se você se hospedar em nossa cabana, terá preço especial em todas as saídas de trekking guiado. A melhor combinação para vivenciar a Patagônia completa.',
-    trek_discount_badge: 'Preço especial',
-    paq_tag: 'A experiência completa', paq_lead: 'Combinamos hospedagem e trekking em experiências projetadas para que você não precise organizar nada — apenas aproveitar.',
-    paq1_dias: '4 dias · 3 noites', paq1_title: 'Escapada Patagônica',
-    paq1_tagline: '"Uma escapada curta, uma conexão eterna com a Patagônia."',
-    paq1_i1: '3 noites de hospedagem na cabana', paq1_i2: '2 saídas de trekking guiado à escolha',
-    paq2_dias: '8 dias · 7 noites', paq2_title: 'Semana Patagônica',
-    paq2_tagline: '"Uma semana para mergulhar na essência da Patagônia."',
-    paq2_i1: '7 noites de hospedagem na cabana', paq2_i2: '4 saídas de trekking guiado à escolha',
-    luan_tag: 'Quem somos', luan_title: 'Lucía & Andrés', luan_badge: 'Guia habilitado\nAAGM',
-    luan_p1: 'Somos um casal e sócios nessa nova jornada. Apreciamos muito a simplicidade da natureza e seus desafios, mas também amamos estar em casa e desfrutar da sua tranquilidade. Trabalhamos para conviver da forma mais amigável com nosso ambiente.',
-    luan_p2: 'Por isso nasce o LUAN, para transmitir e compartilhar com outros a vida que tanto desfrutamos: o lar, a natureza e a aventura. Juntos criamos este espaço para que você possa se desconectar para reconectar.',
-    luan_p3: 'Com anos de experiência em turismo de aventura, organizamos saídas de trekking adaptadas a todos os níveis. Convidamos você a conhecer a magia que só a Patagônia pode oferecer.',
-    val1_title: 'Experiência guiada', val1_desc: 'Guia profissional com habilitação AAGM',
-    val2_title: 'Respeito pelo entorno', val2_desc: 'Turismo responsável e de baixo impacto',
-    val3_title: 'Atendimento personalizado', val3_desc: 'Cada grupo é único, cada saída também',
-    val4_title: 'Conexão real', val4_desc: 'Com a natureza, as trilhas e as pessoas',
-    res_tag: 'Contato & Reservas', res_title: 'Reserve sua experiência',
-    res_lead: 'Preencha o formulário e entraremos em contato em breve para confirmar a disponibilidade e coordenar todos os detalhes da sua estadia.',
-    cal_title: 'Disponibilidade', cal_note: 'Os dias marcados indicam datas reservadas.',
-    form_nombre: 'Nome', form_nombre_ph: 'Seu nome completo',
-    form_llegada: 'Data de chegada', form_salida: 'Data de saída',
-    form_personas: 'Quantidade de pessoas', form_interes: 'O que te interessa?',
-    form_mensaje: 'Mensagem (opcional)', form_mensaje_ph: 'Conte-nos sobre seu grupo, interesses ou dúvidas...',
-    res_btn: 'Enviar consulta',
-    footer_loc: 'Villa La Angostura, Neuquén · Patagônia Argentina',
+    nav_cabana: "Cabana", nav_trek: "Trek", nav_paquetes: "Bed & Trek",
+    nav_nosotros: "Sobre nós", nav_reservar: "Reservar",
+    hero_eyebrow: "Villa La Angostura · Patagônia Argentina",
+    hero_desc: "Um projeto que nasce do coração, inspirado em três elementos fundamentais: lar, natureza e aventura. Uma experiência única para se conectar com a beleza da Patagônia.",
+    hero_btn1: "Verificar disponibilidade", hero_btn2: "Ver trilhas de trekking",
+    loc_ciudad: "Villa La Angostura, Neuquén", loc_personas: "Até 6 pessoas",
+    loc_guia: "Guia habilitado AAGM", loc_parque: "Parque Nacional Nahuel Huapi",
+    bed_tag: "Hospedagem", bed_title: "A Cabana",
+    bed_lead: "Um refúgio no jardim da nossa casa, projetado para que você se sinta em casa. Com 2 quartos em suite conectados por uma cozinha-sala.",
+    bed_desc: "A propriedade tem 54m² com vista para o Cerro O'Connor, situada a 5 km do centro de Villa La Angostura e a 2 km do acesso ao Cerro Bayo. Dois quartos de 18m² estilo loft com mezanino e banheiro privativo, comunicados por uma cozinha-sala compartilhada — ideal para grupos que querem compartilhar momentos sem perder seu espaço.",
+    bed_capacity: "pessoas no máximo", bed_card_title: "2 quartos iguais · até 3 pessoas cada",
+    am1_title: "Cozinha completa", am1_desc: "Cozinha-sala compartilhada equipada",
+    am2_title: "Smart TV + Wi-Fi", am2_desc: "Entretenimento e conectividade",
+    am3_title: "Churrasqueira & exterior", am3_desc: "Mesa e cadeiras externas",
+    am4_title: "Roupa de cama", am4_desc: "Incluída em ambos os quartos",
+    am5_title: "Desconto trekking", am5_desc: "Preço especial nas saídas guiadas",
+    trek_tag: "Saídas de trekking", trek_title: "Explore a Patagônia",
+    trek_lead: "Trilhas para todos os níveis, guiadas por Andrés — guia habilitado AAGM. Cada rota, um cartão-postal diferente do Lago Nahuel Huapi e da cordilheira.",
+    trek_dia: "Saídas de dia", trek_noche: "Travessias com pernoite",
+    trek_discount_title: "Desconto exclusivo para hóspedes LUAN",
+    trek_discount_desc: "Se você se hospedar em nossa cabana, terá preço especial em todas as saídas de trekking guiado. A melhor combinação para vivenciar a Patagônia completa.",
+    trek_discount_badge: "Preço especial",
+    paq_tag: "A experiência completa", paq_lead: "Combinamos hospedagem e trekking em experiências projetadas para que você não precise organizar nada — apenas aproveitar.",
+    paq1_dias: "4 dias · 3 noites", paq1_title: "Escapada Patagônica",
+    paq1_tagline: "Uma escapada curta, uma conexão eterna com a Patagônia.",
+    paq1_i1: "3 noites de hospedagem na cabana", paq1_i2: "2 saídas de trekking guiado à escolha",
+    paq2_dias: "8 dias · 7 noites", paq2_title: "Semana Patagônica",
+    paq2_tagline: "Uma semana para mergulhar na essência da Patagônia.",
+    paq2_i1: "7 noites de hospedagem na cabana", paq2_i2: "4 saídas de trekking guiado à escolha",
+    luan_tag: "Quem somos", luan_title: "Lucía & Andrés", luan_badge: "Guia habilitado AAGM",
+    luan_p1: "Somos um casal e sócios nessa nova jornada. Apreciamos muito a simplicidade da natureza e seus desafios, mas também amamos estar em casa e desfrutar da sua tranquilidade. Trabalhamos para conviver da forma mais amigável com nosso ambiente.",
+    luan_p2: "Por isso nasce o LUAN, para transmitir e compartilhar com outros a vida que tanto desfrutamos: o lar, a natureza e a aventura. Juntos criamos este espaço para que você possa se desconectar para reconectar.",
+    luan_p3: "Com anos de experiência em turismo de aventura, organizamos saídas de trekking adaptadas a todos os níveis. Convidamos você a conhecer a magia que só a Patagônia pode oferecer.",
+    val1_title: "Experiência guiada", val1_desc: "Guia profissional com habilitação AAGM",
+    val2_title: "Respeito pelo entorno", val2_desc: "Turismo responsável e de baixo impacto",
+    val3_title: "Atendimento personalizado", val3_desc: "Cada grupo é único, cada saída também",
+    val4_title: "Conexão real", val4_desc: "Com a natureza, as trilhas e as pessoas",
+    res_tag: "Contato & Reservas", res_title: "Reserve sua experiência",
+    res_lead: "Preencha o formulário e entraremos em contato em breve para confirmar a disponibilidade e coordenar todos os detalhes da sua estadia.",
+    cal_title: "Disponibilidade", cal_note: "Os dias marcados indicam datas reservadas.",
+    form_nombre: "Nome", form_nombre_ph: "Seu nome completo",
+    form_llegada: "Data de chegada", form_salida: "Data de saída",
+    form_personas: "Quantidade de pessoas", form_interes: "O que te interessa?",
+    form_mensaje: "Mensagem (opcional)", form_mensaje_ph: "Conte-nos sobre seu grupo, interesses ou dúvidas...",
+    res_btn: "Enviar consulta",
+    footer_loc: "Villa La Angostura, Neuquén · Patagônia Argentina",
   }
 };
 
 function setLang(lang) {
-  // Translate regular elements
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (translations[lang] && translations[lang][key]) {
-      el.innerHTML = translations[lang][key].replace(/\n/g, '<br>');
+  document.querySelectorAll("[data-i18n]").forEach(function(el) {
+    var key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      el.textContent = translations[lang][key];
     }
   });
-  // Translate placeholders
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    if (translations[lang] && translations[lang][key]) {
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(function(el) {
+    var key = el.getAttribute("data-i18n-placeholder");
+    if (translations[lang] && translations[lang][key] !== undefined) {
       el.placeholder = translations[lang][key];
     }
   });
-  // Update active button
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  document.querySelectorAll(".lang-btn").forEach(function(btn) {
+    btn.classList.remove("active");
+  });
+  document.querySelector(".lang-btn[onclick="setLang('" + lang + "')"]").classList.add("active");
   document.documentElement.lang = lang;
+}
+</script>
+<script>
+// CABIN PRICE CALCULATOR
+var tarifas = [
+  { desde: [12,15], hasta: [3,15], precio: 100 },  // 15 dic - 15 mar: USD 100
+  { desde: [3,15],  hasta: [7,1],  precio: 80  },  // 15 mar - 1 jul: USD 80
+  { desde: [7,1],   hasta: [9,1],  precio: 90  },  // 1 jul - 1 sep: USD 90
+  { desde: [9,1],   hasta: [12,15],precio: 85  },  // 1 sep - 15 dic: USD 85
+];
+
+function getPrecioPorNoche(fecha) {
+  var m = fecha.getMonth() + 1;
+  var d = fecha.getDate();
+  var md = m * 100 + d;
+  if (md >= 1215 || md < 315) return 100;
+  if (md >= 315 && md < 701) return 80;
+  if (md >= 701 && md < 901) return 90;
+  return 85;
+}
+
+function calcularTotal() {
+  var llegada = document.getElementById("f-llegada").value;
+  var salida = document.getElementById("f-salida").value;
+  var cabana = document.getElementById("opt-cabana").checked;
+  var trekMedio = document.getElementById("opt-trek-medio").checked;
+  var trekDia = document.getElementById("opt-trek-dia").checked;
+  var trekNoche = document.getElementById("opt-trek-noche").checked;
+
+  var total = 0;
+  var items = [];
+  var precioCabanaLabel = "";
+
+  // Cabin price
+  if (cabana && llegada && salida) {
+    var d1 = new Date(llegada + "T12:00:00");
+    var d2 = new Date(salida + "T12:00:00");
+    var noches = Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
+    if (noches > 0) {
+      var totalCabana = 0;
+      var curr = new Date(d1);
+      for (var i = 0; i < noches; i++) {
+        totalCabana += getPrecioPorNoche(curr);
+        curr.setDate(curr.getDate() + 1);
+      }
+      items.push({ label: "🏠 Alojamiento (" + noches + " noche" + (noches > 1 ? "s" : "") + ")", precio: totalCabana });
+      total += totalCabana;
+      precioCabanaLabel = "USD " + totalCabana + " (" + noches + " noche" + (noches > 1 ? "s" : "") + ")";
+    }
+  } else if (cabana) {
+    precioCabanaLabel = "Seleccioná fechas";
+  }
+
+  document.getElementById("precio-cabana").textContent = precioCabanaLabel;
+
+  if (trekMedio) { items.push({ label: "🥾 Trekking medio día", precio: 120 }); total += 120; }
+  if (trekDia)   { items.push({ label: "🥾 Trekking día completo", precio: 150 }); total += 150; }
+  if (trekNoche) { items.push({ label: "⛺ Travesía con noche", precio: 250 }); total += 250; }
+
+  var resumen = document.getElementById("resumen-precios");
+  var itemsDiv = document.getElementById("resumen-items");
+  var totalEl = document.getElementById("total-precio");
+
+  if (items.length > 0) {
+    resumen.style.display = "block";
+    itemsDiv.innerHTML = items.map(function(it) {
+      return "<div style='display:flex; justify-content:space-between; font-size:0.82rem; color:rgba(248,244,238,0.7);'><span>" + it.label + "</span><span>USD " + it.precio + "</span></div>";
+    }).join("");
+    totalEl.textContent = "USD " + total;
+  } else {
+    resumen.style.display = "none";
+  }
+}
+
+function enviarConsulta() {
+  alert("¡Gracias! Nos comunicaremos pronto para confirmar tu reserva.");
 }
 </script>
 </body>
