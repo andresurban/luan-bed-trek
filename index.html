@@ -859,9 +859,7 @@
     <li><a href="#reserva" class="nav-cta" data-i18n="nav_reservar">Reservar</a></li>
   </ul>
   <div class="lang-selector">
-    <button class="lang-btn active" onclick="setLang('es')" title="Español">🇦🇷</button>
-    <button class="lang-btn" onclick="setLang('en')" title="English">🇺🇸</button>
-    <button class="lang-btn" onclick="setLang('pt')" title="Português">🇧🇷</button>
+    <div id="google_translate_element"></div>
   </div>
 </nav>
 
@@ -873,6 +871,7 @@
     <polygon fill="#c8ddb8" points="0,200 180,60 320,130 500,20 680,100 820,40 960,90 1100,10 1250,80 1440,30 1440,200"/>
     <polygon fill="#7aaa58" points="0,200 120,110 280,170 440,80 600,140 750,70 900,120 1060,50 1200,100 1440,60 1440,200" opacity="0.5"/>
   </svg>
+      </svg>
 
   <div class="hero-content">
     <p class="hero-eyebrow" data-i18n="hero_eyebrow">Villa La Angostura · Patagonia Argentina</p>
@@ -951,6 +950,33 @@
           </div>
           <div style="width:1px; height:50px; background:rgba(255,255,255,0.15);"></div>
           <div style="font-size:0.85rem; color:rgba(248,244,238,0.7); line-height:1.6;">2 habitaciones · 2 baños<br>Manzano · 5 km del centro</div>
+        </div>
+
+        <!-- TABLA DE PRECIOS -->
+        <div style="margin-top:1rem; background:rgba(10,20,10,0.75); border:1px solid rgba(196,168,130,0.3); border-radius:4px; overflow:hidden;">
+          <div style="padding:0.7rem 1.2rem; border-bottom:1px solid rgba(196,168,130,0.2); display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.2);">
+            <span style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--verde-claro);">Temporada</span>
+            <span style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--verde-claro);">Precio / noche</span>
+          </div>
+          <div style="padding:0.65rem 1.2rem; display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="font-size:0.85rem; color:rgba(248,244,238,0.95);">15 dic — 15 mar</span>
+            <span style="font-size:0.85rem; color:#c8a870; font-weight:600;">USD 100</span>
+          </div>
+          <div style="padding:0.65rem 1.2rem; display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(0,0,0,0.15);">
+            <span style="font-size:0.85rem; color:rgba(248,244,238,0.95);">15 mar — 1 jul</span>
+            <span style="font-size:0.85rem; color:#c8a870; font-weight:600;">USD 80</span>
+          </div>
+          <div style="padding:0.65rem 1.2rem; display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="font-size:0.85rem; color:rgba(248,244,238,0.95);">1 jul — 1 sep</span>
+            <span style="font-size:0.85rem; color:#c8a870; font-weight:600;">USD 90</span>
+          </div>
+          <div style="padding:0.65rem 1.2rem; display:flex; justify-content:space-between; background:rgba(0,0,0,0.15);">
+            <span style="font-size:0.85rem; color:rgba(248,244,238,0.95);">1 sep — 15 dic</span>
+            <span style="font-size:0.85rem; color:#c8a870; font-weight:600;">USD 85</span>
+          </div>
+          <div style="padding:0.6rem 1.2rem; border-top:1px solid rgba(196,168,130,0.2); background:rgba(0,0,0,0.1);">
+            <span style="font-size:0.72rem; color:rgba(248,244,238,0.5); font-style:italic;">Precios por la cabaña completa · pagos en $ al cambio del día</span>
+          </div>
         </div>
       </div>
 
@@ -1091,6 +1117,7 @@
       <div class="trek-card">
         <span class="trek-difficulty diff-alta">Alta</span>
         <h3>Filo Belvedere & Cajón Negro</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 130 · hasta 4 personas</span>
         <p>El circuito más completo: subida al Filo Belvedere y descenso al Cajón Negro entre bosque nativo y cascadas.</p>
         <div class="trek-meta"><span class="trek-meta-item">↔ 20 km</span><span class="trek-meta-item">▲ 914 m</span><span class="trek-meta-item">⏱ 8–10 hs</span></div>
       </div>
@@ -1117,6 +1144,14 @@
         <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 160 · hasta 4 personas</span>
         <p>Ubicado más lejos sobre la Ruta de los 7 Lagos. Sendero corto pero empinado y rocoso. Para quienes buscan un verdadero desafío de montaña con vistas extraordinarias.</p>
         <div class="trek-meta"><span class="trek-meta-item">↔ 9 km</span><span class="trek-meta-item">⏱ 5–7 hs</span></div>
+      </div>
+
+      <!-- CARD DESCUENTO 1 -->
+      <div class="trek-card" style="border:1px solid rgba(200,100,40,0.5); background:rgba(200,90,30,0.22); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <span style="font-size:2.4rem; margin-bottom:0.8rem;">🏷</span>
+        <h3 style="font-size:1.2rem; margin-bottom:0.6rem; color:#f0b870;">10% de descuento</h3>
+        <p style="font-size:0.95rem; color:rgba(248,244,238,0.85); line-height:1.6;">En todas las salidas de trekking cuando te alojás en la cabaña LUAN.</p>
+        <a href="#reserva" style="margin-top:1rem; font-size:0.82rem; color:#f0b870; border:1px solid rgba(200,120,50,0.5); padding:0.4rem 1.2rem; border-radius:2px; text-decoration:none; letter-spacing:0.1em;">Ver precios</a>
       </div>
 
     </div>
@@ -1148,18 +1183,19 @@
       <div class="trek-card">
         <span class="trek-difficulty diff-alta">Alta</span>
         <h3>Travesía: Buol, Cajón Negro & H. Andina</h3>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.8rem; font-weight:600; color:#c8a870; letter-spacing:0.05em;">USD 250 · hasta 4 personas</span>
         <p>La gran travesía de la zona: Cerro Buol + Cajón Negro enlazados por la Huella Andina. Expedición de varios días para quienes buscan la aventura patagónica completa.</p>
         <div class="trek-meta"><span class="trek-meta-item">⏱ Multi-jornada</span><span class="trek-meta-item">🗓 Dic–Abr</span></div>
       </div>
-    </div>
 
-    <div class="trek-discount-banner">
-      <div><svg width="36" height="36" viewBox="0 0 24 24" fill="#b08050" style="display:block; margin-bottom:0.5rem;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93C9.33 17.79 7 14.5 7 11V7.18L12 5z"/></svg></div>
-      <div class="trek-discount-text">
-        <h3 data-i18n="trek_discount_title">Descuento exclusivo para huéspedes LUAN</h3>
-        <p data-i18n="trek_discount_desc">Si te alojás en nuestra cabaña, accedés a precio especial en todas las salidas de trekking guiado. El mejor combo para vivir la Patagonia completa.</p>
+      <!-- CARD DESCUENTO 2 -->
+      <div class="trek-card" style="border:1px solid rgba(200,100,40,0.5); background:rgba(200,90,30,0.22); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <span style="font-size:2.4rem; margin-bottom:0.8rem;">🏠 + 🥾</span>
+        <h3 style="font-size:1.2rem; margin-bottom:0.6rem; color:#f0b870;">Combiná y ahorrá</h3>
+        <p style="font-size:0.95rem; color:rgba(248,244,238,0.85); line-height:1.6;">Alojate en LUAN y sumá las salidas de trekking que quieras con un 10% de descuento exclusivo para huéspedes.</p>
+        <a href="#reserva" style="margin-top:1rem; font-size:0.82rem; color:#f0b870; border:1px solid rgba(200,120,50,0.5); padding:0.4rem 1.2rem; border-radius:2px; text-decoration:none; letter-spacing:0.1em;">Consultar</a>
       </div>
-      <div class="trek-discount-badge" data-i18n="trek_discount_badge">Precio<br>especial</div>
+
     </div>
 
     <!-- CARRUSEL TREKKING -->
@@ -1272,7 +1308,6 @@
       <div class="luan-portrait">
         <div class="luan-portrait-img" style="padding:0; overflow:hidden;">
           <img src="https://raw.githubusercontent.com/andresurban/luan-bed-trek/main/WhatsApp%20Image%202026-06-04%20at%2016.21.52%20(3).jpeg" style="width:100%; height:auto; object-fit:contain; display:block; border-radius:4px;" alt="Lucía y Andrés - LUAN Bed and Trek">
-          <div class="luan-badge" data-i18n="luan_badge">Guía habilitado AAGM</div>
         </div>
         <div class="luan-frame"></div>
       </div>
@@ -1319,17 +1354,39 @@
     <!-- DOS COLUMNAS: calendario + formulario -->
     <div class="reserva-cols">
 
-      <!-- COLUMNA IZQUIERDA: Calendario -->
+      <!-- COLUMNA IZQUIERDA: Calendario interactivo -->
       <div>
-        <p style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--verde-claro); font-weight:600; margin-bottom:1rem;" data-i18n="cal_title">Disponibilidad</p>
-        <div style="border-radius:4px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
-          <iframe src="https://calendar.google.com/calendar/embed?src=reservasluan%40gmail.com&ctz=America%2FArgentina%2FBuenos_Aires&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&bgcolor=%231a3010&color=%23B1440E"
-            style="border:0; width:100%; height:480px; display:block;"
-            frameborder="0"
-            scrolling="no">
-          </iframe>
+        <p style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--verde-claro); font-weight:600; margin-bottom:1rem;">Seleccioná tus fechas</p>
+
+        <div style="background:rgba(10,20,10,0.75); border:1px solid rgba(196,168,130,0.25); border-radius:4px; overflow:hidden;">
+
+          <!-- Nav mes -->
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.9rem 1.2rem; background:rgba(0,0,0,0.2); border-bottom:1px solid rgba(196,168,130,0.15);">
+            <button type="button" onclick="calCambiarMes(-1)" style="background:none; border:none; color:#c8ddb8; font-size:1.4rem; cursor:pointer; padding:0 0.4rem; line-height:1;">‹</button>
+            <span id="cal-mes-label" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.1rem; color:#f5efe6; letter-spacing:0.05em;"></span>
+            <button type="button" onclick="calCambiarMes(1)" style="background:none; border:none; color:#c8ddb8; font-size:1.4rem; cursor:pointer; padding:0 0.4rem; line-height:1;">›</button>
+          </div>
+
+          <!-- Días semana -->
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); text-align:center; padding:0.6rem 0.8rem 0.2rem; gap:2px;">
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Do</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Lu</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Ma</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Mi</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Ju</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Vi</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Sá</span>
+          </div>
+
+          <!-- Grid días -->
+          <div id="cal-grid" style="display:grid; grid-template-columns:repeat(7,1fr); padding:0.2rem 0.8rem 0.8rem; gap:3px;"></div>
+
         </div>
-        <p style="font-size:0.75rem; color:rgba(248,244,238,0.4); margin-top:0.6rem; font-style:italic;" data-i18n="cal_note">Los días marcados indican fechas reservadas.</p>
+
+        <!-- Resumen fechas -->
+        <div id="cal-resumen" style="display:none; margin-top:0.8rem; padding:0.7rem 1rem; background:rgba(176,128,80,0.12); border:1px solid rgba(176,128,80,0.3); border-radius:3px; font-size:0.85rem; color:#c8a870; text-align:center; line-height:1.6;"></div>
+
+        <p style="font-size:0.72rem; color:rgba(248,244,238,0.35); margin-top:0.6rem; font-style:italic;">Primer clic: fecha de llegada · Segundo clic: fecha de salida</p>
       </div>
 
       <!-- COLUMNA DERECHA: Formulario con calculadora -->
@@ -1372,26 +1429,47 @@
       <div style="margin-bottom:1rem;">
         <label style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--verde-claro); display:block; margin-bottom:0.8rem;" data-i18n="form_interes">¿Qué te interesa?</label>
         <div style="display:flex; flex-direction:column; gap:0.5rem;">
-          <label style="display:flex; align-items:center; gap:0.7rem; cursor:pointer; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'">
-            <input type="checkbox" id="opt-cabana" onchange="calcularTotal()" style="width:16px; height:16px; accent-color:#b08050;">
+
+          <!-- Alojamiento: checkbox -->
+          <div style="display:flex; align-items:center; gap:0.7rem; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px;">
+            <input type="checkbox" id="opt-cabana" onchange="calcularTotal()" style="width:16px; height:16px; accent-color:#b08050; cursor:pointer;">
             <span style="font-size:0.88rem; color:var(--crema);">🏠 Alojamiento en la cabaña</span>
             <span id="precio-cabana" style="margin-left:auto; font-size:0.8rem; color:#c8a870; font-weight:600;"></span>
-          </label>
-          <label style="display:flex; align-items:center; gap:0.7rem; cursor:pointer; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'">
-            <input type="checkbox" id="opt-trek-medio" onchange="calcularTotal()" style="width:16px; height:16px; accent-color:#b08050;">
-            <span style="font-size:0.88rem; color:var(--crema);">🥾 Trekking medio día</span>
-            <span style="margin-left:auto; font-size:0.8rem; color:#c8a870; font-weight:600;">USD 120</span>
-          </label>
-          <label style="display:flex; align-items:center; gap:0.7rem; cursor:pointer; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'">
-            <input type="checkbox" id="opt-trek-dia" onchange="calcularTotal()" style="width:16px; height:16px; accent-color:#b08050;">
-            <span style="font-size:0.88rem; color:var(--crema);">🥾 Trekking día completo</span>
-            <span style="margin-left:auto; font-size:0.8rem; color:#c8a870; font-weight:600;">USD 150</span>
-          </label>
-          <label style="display:flex; align-items:center; gap:0.7rem; cursor:pointer; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'">
-            <input type="checkbox" id="opt-trek-noche" onchange="calcularTotal()" style="width:16px; height:16px; accent-color:#b08050;">
-            <span style="font-size:0.88rem; color:var(--crema);">⛺ Travesía con noche <span style="font-size:0.75rem; color:rgba(248,244,238,0.4);">(incluye comidas)</span></span>
-            <span style="margin-left:auto; font-size:0.8rem; color:#c8a870; font-weight:600;">USD 250</span>
-          </label>
+          </div>
+
+          <!-- Trekking medio día: con cantidad -->
+          <div style="display:flex; align-items:center; gap:0.7rem; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px;">
+            <span style="font-size:0.88rem; color:var(--crema); flex:1;">🥾 Trekking medio día</span>
+            <span style="font-size:0.8rem; color:#c8a870; font-weight:600; margin-right:0.8rem;">USD 120 c/u</span>
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <button type="button" onclick="cambiarCantidad('trek-medio', -1)" style="width:26px; height:26px; background:rgba(176,128,80,0.2); border:1px solid rgba(176,128,80,0.4); color:#c8a870; border-radius:2px; cursor:pointer; font-size:1rem; line-height:1;">−</button>
+              <span id="cant-trek-medio" style="min-width:20px; text-align:center; font-size:0.9rem; color:var(--crema);">0</span>
+              <button type="button" onclick="cambiarCantidad('trek-medio', 1)" style="width:26px; height:26px; background:rgba(176,128,80,0.2); border:1px solid rgba(176,128,80,0.4); color:#c8a870; border-radius:2px; cursor:pointer; font-size:1rem; line-height:1;">+</button>
+            </div>
+          </div>
+
+          <!-- Trekking día completo: con cantidad -->
+          <div style="display:flex; align-items:center; gap:0.7rem; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px;">
+            <span style="font-size:0.88rem; color:var(--crema); flex:1;">🥾 Trekking día completo</span>
+            <span style="font-size:0.8rem; color:#c8a870; font-weight:600; margin-right:0.8rem;">USD 150 c/u</span>
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <button type="button" onclick="cambiarCantidad('trek-dia', -1)" style="width:26px; height:26px; background:rgba(176,128,80,0.2); border:1px solid rgba(176,128,80,0.4); color:#c8a870; border-radius:2px; cursor:pointer; font-size:1rem; line-height:1;">−</button>
+              <span id="cant-trek-dia" style="min-width:20px; text-align:center; font-size:0.9rem; color:var(--crema);">0</span>
+              <button type="button" onclick="cambiarCantidad('trek-dia', 1)" style="width:26px; height:26px; background:rgba(176,128,80,0.2); border:1px solid rgba(176,128,80,0.4); color:#c8a870; border-radius:2px; cursor:pointer; font-size:1rem; line-height:1;">+</button>
+            </div>
+          </div>
+
+          <!-- Travesía con noche: con cantidad -->
+          <div style="display:flex; align-items:center; gap:0.7rem; padding:0.7rem 1rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px;">
+            <span style="font-size:0.88rem; color:var(--crema); flex:1;">⛺ Travesía con noche <span style="font-size:0.75rem; color:rgba(248,244,238,0.4);">(incluye comidas)</span></span>
+            <span style="font-size:0.8rem; color:#c8a870; font-weight:600; margin-right:0.8rem;">USD 250 c/u</span>
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <button type="button" onclick="cambiarCantidad('trek-noche', -1)" style="width:26px; height:26px; background:rgba(176,128,80,0.2); border:1px solid rgba(176,128,80,0.4); color:#c8a870; border-radius:2px; cursor:pointer; font-size:1rem; line-height:1;">−</button>
+              <span id="cant-trek-noche" style="min-width:20px; text-align:center; font-size:0.9rem; color:var(--crema);">0</span>
+              <button type="button" onclick="cambiarCantidad('trek-noche', 1)" style="width:26px; height:26px; background:rgba(176,128,80,0.2); border:1px solid rgba(176,128,80,0.4); color:#c8a870; border-radius:2px; cursor:pointer; font-size:1rem; line-height:1;">+</button>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -1476,182 +1554,111 @@
   actualizarTrek();
 </script>
 
+
 <script>
-const translations = {
-  es: {
-    nav_cabana: "Cabaña", nav_trek: "Trek", nav_paquetes: "Bed & Trek",
-    nav_nosotros: "Nosotros", nav_reservar: "Reservar",
-    hero_eyebrow: "Villa La Angostura · Patagonia Argentina",
-    hero_desc: "Un proyecto que nace desde el corazón, inspirado en tres elementos fundamentales: hogar, naturaleza y aventura. Una experiencia única para conectarte con la belleza de la Patagonia.",
-    hero_btn1: "Consultar disponibilidad", hero_btn2: "Ver salidas de trekking",
-    loc_ciudad: "Villa La Angostura, Neuquén", loc_personas: "Hasta 6 personas",
-    loc_guia: "Guía habilitado AAGM", loc_parque: "Parque Nacional Nahuel Huapi",
-    bed_tag: "Alojamiento", bed_title: "La Cabaña",
-    bed_lead: "Un refugio en el jardín de nuestra casa, diseñado para que te sientas en hogar. Con 2 habitaciones en suite conectadas con un living-cocina.",
-    bed_desc: "La casa tiene una planta de 54m² con vista al Cerro O'Connor, situada a 5 km del centro de Villa La Angostura y a 2 km del acceso al Cerro Bayo. Dos habitaciones de 18m² tipo loft con entrepiso y baño privado, comunicadas a través de un living-cocina — ideal para compartir momentos en grupo.",
-    bed_capacity: "personas máximo", bed_card_title: "2 habitaciones iguales · hasta 3 personas c/u",
-    am1_title: "Cocina completa", am1_desc: "Salón-cocina compartido equipado",
-    am2_title: "Smart TV + Wi-Fi", am2_desc: "Entretenimiento y conectividad",
-    am3_title: "Parrilla & exterior", am3_desc: "Mesa y sillas de exterior",
-    am4_title: "Ropa blanca", am4_desc: "Incluida en ambas habitaciones",
-    am5_title: "Descuento trekking", am5_desc: "Precio especial en salidas guiadas",
-    trek_tag: "Salidas de trekking", trek_title: "Explorá la Patagonia",
-    trek_lead: "Senderos para todos los niveles, guiados por Andrés — guía habilitado AAGM. Cada ruta, una postal distinta del lago Nahuel Huapi y la cordillera.",
-    trek_dia: "Salidas de día", trek_noche: "Travesías con noche",
-    trek_discount_title: "Descuento exclusivo para huéspedes LUAN",
-    trek_discount_desc: "Si te alojás en nuestra cabaña, accedés a precio especial en todas las salidas de trekking guiado. El mejor combo para vivir la Patagonia completa.",
-    trek_discount_badge: "Precio especial",
-    paq_tag: "La experiencia completa", paq_lead: "Combinamos alojamiento y trekking en experiencias diseñadas para que no tengas que organizar nada — solo disfrutar.",
-    paq1_dias: "4 días · 3 noches", paq1_title: "Escape Patagónico",
-    paq1_tagline: "Un escape corto, una conexión eterna con la Patagonia.",
-    paq1_i1: "3 noches de alojamiento en la cabaña", paq1_i2: "2 salidas de trekking guiado a elección",
-    paq2_dias: "8 días · 7 noches", paq2_title: "Semana Patagónica",
-    paq2_tagline: "Una semana para sumergirte en la esencia de la Patagonia.",
-    paq2_i1: "7 noches de alojamiento en la cabaña", paq2_i2: "4 salidas de trekking guiado a elección",
-    luan_tag: "Quiénes somos", luan_title: "Lucía & Andrés", luan_badge: "Guía habilitado AAGM",
-    luan_p1: "Somos pareja y socios de este nuevo camino. Disfrutamos mucho de la simpleza de la naturaleza y de sus desafíos, pero también amamos estar en casa y disfrutar de su tranquilidad. Trabajamos y nos esforzamos para convivir de la forma más amigable con nuestro ambiente.",
-    luan_p2: "Por eso nace LUAN, para transmitir y compartir con otros la vida que tanto disfrutamos: el hogar, la naturaleza y la aventura. Juntos creamos este espacio para que puedas desconectarte para reconectar.",
-    luan_p3: "Con años de experiencia en turismo y aventura, organizamos salidas de trekking adaptadas a todos los niveles. Los invitamos a que conozcan la magia que solo la Patagonia puede ofrecer.",
-    val1_title: "Experiencia guiada", val1_desc: "Guía profesional con habilitación AAGM",
-    val2_title: "Respeto por el entorno", val2_desc: "Turismo responsable y de bajo impacto",
-    val3_title: "Trato personalizado", val3_desc: "Cada grupo es único, cada salida también",
-    val4_title: "Conexión real", val4_desc: "Con la naturaleza, los senderos y las personas",
-    res_tag: "Contacto & Reservas", res_title: "Reservá tu experiencia",
-    res_lead: "Completá el formulario y nos comunicamos a la brevedad para confirmar disponibilidad y coordinar todos los detalles de tu estadía.",
-    cal_title: "Disponibilidad", cal_note: "Los días marcados indican fechas reservadas.",
-    form_nombre: "Nombre", form_nombre_ph: "Tu nombre completo",
-    form_llegada: "Fecha de llegada", form_salida: "Fecha de salida",
-    form_personas: "Cantidad de personas", form_interes: "¿Qué te interesa?",
-    form_mensaje: "Mensaje (opcional)", form_mensaje_ph: "Contanos sobre tu grupo, intereses o preguntas...",
-    res_btn: "Enviar consulta",
-    footer_loc: "Villa La Angostura, Neuquén · Patagonia Argentina",
-  },
-  en: {
-    nav_cabana: "Cabin", nav_trek: "Trek", nav_paquetes: "Bed & Trek",
-    nav_nosotros: "About us", nav_reservar: "Book now",
-    hero_eyebrow: "Villa La Angostura · Patagonia Argentina",
-    hero_desc: "A project born from the heart, inspired by three fundamental elements: home, nature and adventure. A unique experience to connect with the beauty of Patagonia.",
-    hero_btn1: "Check availability", hero_btn2: "View trekking tours",
-    loc_ciudad: "Villa La Angostura, Neuquén", loc_personas: "Up to 6 guests",
-    loc_guia: "AAGM certified guide", loc_parque: "Nahuel Huapi National Park",
-    bed_tag: "Accommodation", bed_title: "The Cabin",
-    bed_lead: "A retreat in the garden of our home, designed to make you feel at home. With 2 en-suite rooms connected by a living-kitchen.",
-    bed_desc: "The property spans 54m² with views of Cerro O'Connor, located 5 km from the centre of Villa La Angostura and 2 km from the Cerro Bayo access. Two 18m² loft-style rooms with mezzanine and private bathroom, connected through a shared living-kitchen — perfect for groups who want to share moments while keeping their own space.",
-    bed_capacity: "guests maximum", bed_card_title: "2 identical rooms · up to 3 guests each",
-    am1_title: "Full kitchen", am1_desc: "Fully equipped shared living-kitchen",
-    am2_title: "Smart TV + Wi-Fi", am2_desc: "Entertainment and connectivity",
-    am3_title: "BBQ & outdoor", am3_desc: "Outdoor table and chairs",
-    am4_title: "Bed linen", am4_desc: "Included in both rooms",
-    am5_title: "Trekking discount", am5_desc: "Special price on guided tours",
-    trek_tag: "Trekking tours", trek_title: "Explore Patagonia",
-    trek_lead: "Trails for all levels, guided by Andrés — AAGM certified guide. Every route, a different postcard of Lake Nahuel Huapi and the Andes.",
-    trek_dia: "Day hikes", trek_noche: "Overnight treks",
-    trek_discount_title: "Exclusive discount for LUAN guests",
-    trek_discount_desc: "If you stay at our cabin, you get a special price on all guided trekking tours. The best combo to experience Patagonia in full.",
-    trek_discount_badge: "Special price",
-    paq_tag: "The complete experience", paq_lead: "We combine accommodation and trekking in experiences designed so you don't have to organise anything — just enjoy.",
-    paq1_dias: "4 days · 3 nights", paq1_title: "Patagonian Escape",
-    paq1_tagline: "A short escape, an eternal connection with Patagonia.",
-    paq1_i1: "3 nights accommodation in the cabin", paq1_i2: "2 guided trekking tours of your choice",
-    paq2_dias: "8 days · 7 nights", paq2_title: "Patagonian Week",
-    paq2_tagline: "A week to immerse yourself in the essence of Patagonia.",
-    paq2_i1: "7 nights accommodation in the cabin", paq2_i2: "4 guided trekking tours of your choice",
-    luan_tag: "About us", luan_title: "Lucía & Andrés", luan_badge: "AAGM certified guide",
-    luan_p1: "We are a couple and partners on this new journey. We deeply enjoy the simplicity of nature and its challenges, but we also love being home and enjoying its peace. We work hard to live in the most friendly way with our environment.",
-    luan_p2: "That is why LUAN was born — to share with others the life we enjoy so much: home, nature and adventure. Together we created this space so you can disconnect to reconnect.",
-    luan_p3: "With years of experience in adventure tourism, we organise trekking tours adapted to all skill levels. We invite you to discover the magic that only Patagonia can offer.",
-    val1_title: "Guided experience", val1_desc: "Professional guide with AAGM certification",
-    val2_title: "Respect for nature", val2_desc: "Responsible, low-impact tourism",
-    val3_title: "Personal approach", val3_desc: "Every group is unique, every outing too",
-    val4_title: "Real connection", val4_desc: "With nature, the trails and the people",
-    res_tag: "Contact & Bookings", res_title: "Book your experience",
-    res_lead: "Fill in the form and we will get back to you shortly to confirm availability and arrange all the details of your stay.",
-    cal_title: "Availability", cal_note: "Marked days indicate reserved dates.",
-    form_nombre: "Name", form_nombre_ph: "Your full name",
-    form_llegada: "Check-in date", form_salida: "Check-out date",
-    form_personas: "Number of guests", form_interes: "What are you interested in?",
-    form_mensaje: "Message (optional)", form_mensaje_ph: "Tell us about your group, interests or questions...",
-    res_btn: "Send enquiry",
-    footer_loc: "Villa La Angostura, Neuquén · Patagonia Argentina",
-  },
-  pt: {
-    nav_cabana: "Cabana", nav_trek: "Trek", nav_paquetes: "Bed & Trek",
-    nav_nosotros: "Sobre nós", nav_reservar: "Reservar",
-    hero_eyebrow: "Villa La Angostura · Patagônia Argentina",
-    hero_desc: "Um projeto que nasce do coração, inspirado em três elementos fundamentais: lar, natureza e aventura. Uma experiência única para se conectar com a beleza da Patagônia.",
-    hero_btn1: "Verificar disponibilidade", hero_btn2: "Ver trilhas de trekking",
-    loc_ciudad: "Villa La Angostura, Neuquén", loc_personas: "Até 6 pessoas",
-    loc_guia: "Guia habilitado AAGM", loc_parque: "Parque Nacional Nahuel Huapi",
-    bed_tag: "Hospedagem", bed_title: "A Cabana",
-    bed_lead: "Um refúgio no jardim da nossa casa, projetado para que você se sinta em casa. Com 2 quartos em suite conectados por uma cozinha-sala.",
-    bed_desc: "A propriedade tem 54m² com vista para o Cerro O'Connor, situada a 5 km do centro de Villa La Angostura e a 2 km do acesso ao Cerro Bayo. Dois quartos de 18m² estilo loft com mezanino e banheiro privativo, comunicados por uma cozinha-sala compartilhada — ideal para grupos que querem compartilhar momentos sem perder seu espaço.",
-    bed_capacity: "pessoas no máximo", bed_card_title: "2 quartos iguais · até 3 pessoas cada",
-    am1_title: "Cozinha completa", am1_desc: "Cozinha-sala compartilhada equipada",
-    am2_title: "Smart TV + Wi-Fi", am2_desc: "Entretenimento e conectividade",
-    am3_title: "Churrasqueira & exterior", am3_desc: "Mesa e cadeiras externas",
-    am4_title: "Roupa de cama", am4_desc: "Incluída em ambos os quartos",
-    am5_title: "Desconto trekking", am5_desc: "Preço especial nas saídas guiadas",
-    trek_tag: "Saídas de trekking", trek_title: "Explore a Patagônia",
-    trek_lead: "Trilhas para todos os níveis, guiadas por Andrés — guia habilitado AAGM. Cada rota, um cartão-postal diferente do Lago Nahuel Huapi e da cordilheira.",
-    trek_dia: "Saídas de dia", trek_noche: "Travessias com pernoite",
-    trek_discount_title: "Desconto exclusivo para hóspedes LUAN",
-    trek_discount_desc: "Se você se hospedar em nossa cabana, terá preço especial em todas as saídas de trekking guiado. A melhor combinação para vivenciar a Patagônia completa.",
-    trek_discount_badge: "Preço especial",
-    paq_tag: "A experiência completa", paq_lead: "Combinamos hospedagem e trekking em experiências projetadas para que você não precise organizar nada — apenas aproveitar.",
-    paq1_dias: "4 dias · 3 noites", paq1_title: "Escapada Patagônica",
-    paq1_tagline: "Uma escapada curta, uma conexão eterna com a Patagônia.",
-    paq1_i1: "3 noites de hospedagem na cabana", paq1_i2: "2 saídas de trekking guiado à escolha",
-    paq2_dias: "8 dias · 7 noites", paq2_title: "Semana Patagônica",
-    paq2_tagline: "Uma semana para mergulhar na essência da Patagônia.",
-    paq2_i1: "7 noites de hospedagem na cabana", paq2_i2: "4 saídas de trekking guiado à escolha",
-    luan_tag: "Quem somos", luan_title: "Lucía & Andrés", luan_badge: "Guia habilitado AAGM",
-    luan_p1: "Somos um casal e sócios nessa nova jornada. Apreciamos muito a simplicidade da natureza e seus desafios, mas também amamos estar em casa e desfrutar da sua tranquilidade. Trabalhamos para conviver da forma mais amigável com nosso ambiente.",
-    luan_p2: "Por isso nasce o LUAN, para transmitir e compartilhar com outros a vida que tanto desfrutamos: o lar, a natureza e a aventura. Juntos criamos este espaço para que você possa se desconectar para reconectar.",
-    luan_p3: "Com anos de experiência em turismo de aventura, organizamos saídas de trekking adaptadas a todos os níveis. Convidamos você a conhecer a magia que só a Patagônia pode oferecer.",
-    val1_title: "Experiência guiada", val1_desc: "Guia profissional com habilitação AAGM",
-    val2_title: "Respeito pelo entorno", val2_desc: "Turismo responsável e de baixo impacto",
-    val3_title: "Atendimento personalizado", val3_desc: "Cada grupo é único, cada saída também",
-    val4_title: "Conexão real", val4_desc: "Com a natureza, as trilhas e as pessoas",
-    res_tag: "Contato & Reservas", res_title: "Reserve sua experiência",
-    res_lead: "Preencha o formulário e entraremos em contato em breve para confirmar a disponibilidade e coordenar todos os detalhes da sua estadia.",
-    cal_title: "Disponibilidade", cal_note: "Os dias marcados indicam datas reservadas.",
-    form_nombre: "Nome", form_nombre_ph: "Seu nome completo",
-    form_llegada: "Data de chegada", form_salida: "Data de saída",
-    form_personas: "Quantidade de pessoas", form_interes: "O que te interessa?",
-    form_mensaje: "Mensagem (opcional)", form_mensaje_ph: "Conte-nos sobre seu grupo, interesses ou dúvidas...",
-    res_btn: "Enviar consulta",
-    footer_loc: "Villa La Angostura, Neuquén · Patagônia Argentina",
-  }
+
+// ===== CALENDARIO PICKER =====
+var CAL = {
+  hoy: new Date(new Date().setHours(0,0,0,0)),
+  mes: new Date().getMonth(),
+  anio: new Date().getFullYear(),
+  inicio: null,
+  fin: null,
+  meses: ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
 };
 
-function setLang(lang) {
-  document.querySelectorAll("[data-i18n]").forEach(function(el) {
-    var key = el.getAttribute("data-i18n");
-    if (translations[lang] && translations[lang][key] !== undefined) {
-      el.textContent = translations[lang][key];
-    }
-  });
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(function(el) {
-    var key = el.getAttribute("data-i18n-placeholder");
-    if (translations[lang] && translations[lang][key] !== undefined) {
-      el.placeholder = translations[lang][key];
-    }
-  });
-  document.querySelectorAll(".lang-btn").forEach(function(btn) {
-    btn.classList.remove("active");
-  });
-  document.querySelector(".lang-btn[onclick="setLang('" + lang + "')"]").classList.add("active");
-  document.documentElement.lang = lang;
+function calCambiarMes(d) {
+  CAL.mes += d;
+  if (CAL.mes > 11) { CAL.mes = 0; CAL.anio++; }
+  if (CAL.mes < 0)  { CAL.mes = 11; CAL.anio--; }
+  calRender();
 }
-</script>
-<script>
-// CABIN PRICE CALCULATOR
-var tarifas = [
-  { desde: [12,15], hasta: [3,15], precio: 100 },  // 15 dic - 15 mar: USD 100
-  { desde: [3,15],  hasta: [7,1],  precio: 80  },  // 15 mar - 1 jul: USD 80
-  { desde: [7,1],   hasta: [9,1],  precio: 90  },  // 1 jul - 1 sep: USD 90
-  { desde: [9,1],   hasta: [12,15],precio: 85  },  // 1 sep - 15 dic: USD 85
-];
+
+function calFechaStr(f) {
+  return f.getFullYear() + '-' + String(f.getMonth()+1).padStart(2,'0') + '-' + String(f.getDate()).padStart(2,'0');
+}
+
+function calFechaLabel(f) {
+  return f.getDate() + ' ' + CAL.meses[f.getMonth()].slice(0,3) + ' ' + f.getFullYear();
+}
+
+function calRender() {
+  document.getElementById('cal-mes-label').textContent = CAL.meses[CAL.mes] + ' ' + CAL.anio;
+  var grid = document.getElementById('cal-grid');
+  grid.innerHTML = '';
+
+  var offset = new Date(CAL.anio, CAL.mes, 1).getDay();
+  var total  = new Date(CAL.anio, CAL.mes+1, 0).getDate();
+
+  for (var i = 0; i < offset; i++) {
+    grid.appendChild(document.createElement('div'));
+  }
+
+  for (var d = 1; d <= total; d++) {
+    var f = new Date(CAL.anio, CAL.mes, d);
+    f.setHours(0,0,0,0);
+    var pasado   = f < CAL.hoy;
+    var esIni    = CAL.inicio && f.getTime() === CAL.inicio.getTime();
+    var esFin    = CAL.fin    && f.getTime() === CAL.fin.getTime();
+    var enRango  = CAL.inicio && CAL.fin && f > CAL.inicio && f < CAL.fin;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = d;
+    btn.disabled = pasado;
+
+    var bg = 'transparent', color = 'rgba(200,221,184,0.85)', fw = 'normal', cursor = 'pointer';
+    if (pasado)          { color = 'rgba(200,221,184,0.2)'; cursor = 'default'; }
+    else if (esIni||esFin) { bg = '#b08050'; color = '#fff'; fw = '600'; }
+    else if (enRango)    { bg = 'rgba(176,128,80,0.22)'; color = '#c8a870'; }
+
+    btn.style.cssText = 'background:'+bg+'; color:'+color+'; font-weight:'+fw+'; cursor:'+cursor+'; border:none; border-radius:3px; padding:0.42rem 0; font-size:0.82rem; width:100%;';
+    btn.setAttribute('data-ts', f.getTime());
+    grid.appendChild(btn);
+  }
+}
+
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('#cal-grid button');
+  if (!btn || btn.disabled) return;
+  var f = new Date(parseInt(btn.getAttribute('data-ts')));
+
+  if (!CAL.inicio || (CAL.inicio && CAL.fin)) {
+    CAL.inicio = f; CAL.fin = null;
+  } else {
+    if (f <= CAL.inicio) { CAL.inicio = f; CAL.fin = null; }
+    else { CAL.fin = f; }
+  }
+
+  // Sincronizar con los inputs de fecha
+  if (CAL.inicio) document.getElementById('f-llegada').value = calFechaStr(CAL.inicio);
+  if (CAL.fin)    document.getElementById('f-salida').value  = calFechaStr(CAL.fin);
+
+  // Resumen
+  var res = document.getElementById('cal-resumen');
+  if (CAL.inicio && CAL.fin) {
+    var noches = Math.round((CAL.fin - CAL.inicio) / 86400000);
+    res.style.display = 'block';
+    res.innerHTML = calFechaLabel(CAL.inicio) + ' &nbsp;→&nbsp; ' + calFechaLabel(CAL.fin) + '<br><strong>' + noches + ' noche' + (noches>1?'s':'') + '</strong>';
+    calcularTotal();
+  } else {
+    res.style.display = 'block';
+    res.textContent = 'Llegada: ' + calFechaLabel(CAL.inicio) + ' · Seleccioná la salida';
+  }
+
+  calRender();
+});
+
+calRender();
+
+// ===== CALCULADORA =====
+var cantidades = { 'trek-medio': 0, 'trek-dia': 0, 'trek-noche': 0 };
+
+function cambiarCantidad(tipo, delta) {
+  cantidades[tipo] = Math.max(0, cantidades[tipo] + delta);
+  document.getElementById('cant-' + tipo).textContent = cantidades[tipo];
+  calcularTotal();
+}
 
 function getPrecioPorNoche(fecha) {
   var m = fecha.getMonth() + 1;
@@ -1667,15 +1674,11 @@ function calcularTotal() {
   var llegada = document.getElementById("f-llegada").value;
   var salida = document.getElementById("f-salida").value;
   var cabana = document.getElementById("opt-cabana").checked;
-  var trekMedio = document.getElementById("opt-trek-medio").checked;
-  var trekDia = document.getElementById("opt-trek-dia").checked;
-  var trekNoche = document.getElementById("opt-trek-noche").checked;
 
   var total = 0;
   var items = [];
   var precioCabanaLabel = "";
 
-  // Cabin price
   if (cabana && llegada && salida) {
     var d1 = new Date(llegada + "T12:00:00");
     var d2 = new Date(salida + "T12:00:00");
@@ -1697,9 +1700,32 @@ function calcularTotal() {
 
   document.getElementById("precio-cabana").textContent = precioCabanaLabel;
 
-  if (trekMedio) { items.push({ label: "🥾 Trekking medio día", precio: 120 }); total += 120; }
-  if (trekDia)   { items.push({ label: "🥾 Trekking día completo", precio: 150 }); total += 150; }
-  if (trekNoche) { items.push({ label: "⛺ Travesía con noche", precio: 250 }); total += 250; }
+  var descuento = cabana ? 0.10 : 0; // 10% descuento si hay alojamiento
+
+  if (cantidades['trek-medio'] > 0) {
+    var precioBase = cantidades['trek-medio'] * 120;
+    var sub = descuento > 0 ? Math.round(precioBase * (1 - descuento)) : precioBase;
+    var label = "🥾 Trekking medio día × " + cantidades['trek-medio'];
+    if (descuento > 0) label += " <span style='color:#7aaa58; font-size:0.75rem;'>(-10% huésped)</span>";
+    items.push({ label: label, precio: sub });
+    total += sub;
+  }
+  if (cantidades['trek-dia'] > 0) {
+    var precioBase = cantidades['trek-dia'] * 150;
+    var sub = descuento > 0 ? Math.round(precioBase * (1 - descuento)) : precioBase;
+    var label = "🥾 Trekking día completo × " + cantidades['trek-dia'];
+    if (descuento > 0) label += " <span style='color:#7aaa58; font-size:0.75rem;'>(-10% huésped)</span>";
+    items.push({ label: label, precio: sub });
+    total += sub;
+  }
+  if (cantidades['trek-noche'] > 0) {
+    var precioBase = cantidades['trek-noche'] * 250;
+    var sub = descuento > 0 ? Math.round(precioBase * (1 - descuento)) : precioBase;
+    var label = "⛺ Travesía con noche × " + cantidades['trek-noche'];
+    if (descuento > 0) label += " <span style='color:#7aaa58; font-size:0.75rem;'>(-10% huésped)</span>";
+    items.push({ label: label, precio: sub });
+    total += sub;
+  }
 
   var resumen = document.getElementById("resumen-precios");
   var itemsDiv = document.getElementById("resumen-items");
@@ -1707,9 +1733,13 @@ function calcularTotal() {
 
   if (items.length > 0) {
     resumen.style.display = "block";
-    itemsDiv.innerHTML = items.map(function(it) {
-      return "<div style='display:flex; justify-content:space-between; font-size:0.82rem; color:rgba(248,244,238,0.7);'><span>" + it.label + "</span><span>USD " + it.precio + "</span></div>";
+    var html = items.map(function(it) {
+      return "<div style='display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; color:rgba(248,244,238,0.7); margin-bottom:0.2rem;'><span>" + it.label + "</span><span style='margin-left:1rem;'>USD " + it.precio + "</span></div>";
     }).join("");
+    if (descuento > 0) {
+      html += "<div style='font-size:0.72rem; color:#7aaa58; margin-top:0.4rem; font-style:italic;'>✓ Descuento del 10% aplicado por alojarse en LUAN</div>";
+    }
+    itemsDiv.innerHTML = html;
     totalEl.textContent = "USD " + total;
   } else {
     resumen.style.display = "none";
@@ -1717,8 +1747,98 @@ function calcularTotal() {
 }
 
 function enviarConsulta() {
-  alert("¡Gracias! Nos comunicaremos pronto para confirmar tu reserva.");
+  var nombre = document.getElementById("f-nombre").value;
+  var email = document.getElementById("f-email").value;
+  var llegada = document.getElementById("f-llegada").value;
+  var salida = document.getElementById("f-salida").value;
+  var personas = document.getElementById("f-personas").value;
+  var mensaje = document.getElementById("f-mensaje").value;
+  var cabana = document.getElementById("opt-cabana").checked;
+
+  if (!nombre || !email) {
+    alert("Por favor completá al menos tu nombre y email.");
+    return;
+  }
+
+  // Armar resumen de servicios
+  var servicios = [];
+  if (cabana) servicios.push("Alojamiento en la cabaña");
+  if (cantidades['trek-medio'] > 0) servicios.push("Trekking medio día × " + cantidades['trek-medio']);
+  if (cantidades['trek-dia'] > 0) servicios.push("Trekking día completo × " + cantidades['trek-dia']);
+  if (cantidades['trek-noche'] > 0) servicios.push("Travesía con noche × " + cantidades['trek-noche']);
+
+  var totalEl = document.getElementById("total-precio");
+  var total = totalEl ? totalEl.textContent : "";
+
+  var mensajeCompleto = "";
+  if (llegada) mensajeCompleto += "Llegada: " + llegada + "\n";
+  if (salida) mensajeCompleto += "Salida: " + salida + "\n";
+  mensajeCompleto += "Personas: " + personas + "\n";
+  if (servicios.length > 0) mensajeCompleto += "Servicios: " + servicios.join(", ") + "\n";
+  if (total) mensajeCompleto += "Total estimado: " + total + "\n";
+  if (mensaje) mensajeCompleto += "\nMensaje: " + mensaje;
+
+  var btn = document.querySelector(".form-submit");
+  btn.textContent = "Enviando...";
+  btn.disabled = true;
+
+  fetch("https://formspree.io/f/xykaneee", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      nombre: nombre,
+      email: email,
+      consulta: mensajeCompleto
+    })
+  })
+  .then(function(res) {
+    if (res.ok) {
+      btn.textContent = "¡Consulta enviada!";
+      btn.style.background = "var(--verde-claro)";
+      setTimeout(function() {
+        btn.textContent = "Enviar consulta";
+        btn.style.background = "";
+        btn.disabled = false;
+      }, 4000);
+    } else {
+      throw new Error("Error");
+    }
+  })
+  .catch(function() {
+    alert("Hubo un error al enviar. Por favor escribinos directamente a reservasluan@gmail.com");
+    btn.textContent = "Enviar consulta";
+    btn.disabled = false;
+  });
 }
 </script>
+<!-- Google Translate -->
+<style>
+  .goog-te-banner-frame, .goog-te-balloon-frame { display:none !important; }
+  body { top: 0 !important; }
+  .goog-te-gadget-simple {
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 3px !important;
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.78rem !important;
+  }
+  .goog-te-gadget-simple span, .goog-te-gadget-simple .goog-te-menu-value span {
+    color: rgba(248,244,238,0.8) !important;
+  }
+  .goog-te-gadget-simple img { display:none !important; }
+  .goog-logo-link { display:none !important; }
+  .goog-te-gadget { color: transparent !important; font-size:0 !important; }
+</style>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'es',
+    includedLanguages: 'en,pt,es',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
