@@ -115,21 +115,11 @@
   }
 
   .hero-bg-pattern {
-    position: absolute;
-    inset: 0;
-    opacity: 0.06;
-    background-image:
-      repeating-linear-gradient(45deg, var(--verde-claro) 0px, var(--verde-claro) 1px, transparent 1px, transparent 60px),
-      repeating-linear-gradient(-45deg, var(--verde-claro) 0px, var(--verde-claro) 1px, transparent 1px, transparent 60px);
+    display: none;
   }
 
   .hero-mountains {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    opacity: 0.12;
+    display: none;
   }
 
   .hero-content {
@@ -158,10 +148,11 @@
 
   .hero-subtitle-brand {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    color: var(--verde-palido);
-    letter-spacing: 0.25em;
-    font-style: italic;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--crema);
+    letter-spacing: 0.1em;
+    font-style: normal;
+    line-height: 1;
     margin-bottom: 1.8rem;
   }
 
@@ -1384,46 +1375,10 @@
     <h2 class="section-title" data-i18n="res_title">Reservá tu experiencia</h2>
     <p class="reserva-lead" data-i18n="res_lead">Completá el formulario y nos comunicamos a la brevedad para confirmar disponibilidad y coordinar todos los detalles de tu estadía.</p>
 
-    <!-- DOS COLUMNAS: calendario + formulario -->
-    <div class="reserva-cols">
+    <!-- FORMULARIO CENTRADO -->
+    <div style="max-width:580px; margin:0 auto;">
 
-      <!-- COLUMNA IZQUIERDA: Calendario interactivo -->
-      <div>
-        <p style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--verde-claro); font-weight:600; margin-bottom:1rem;">Seleccioná tus fechas</p>
-
-        <div style="background:rgba(10,20,10,0.75); border:1px solid rgba(196,168,130,0.25); border-radius:4px; overflow:hidden;">
-
-          <!-- Nav mes -->
-          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.9rem 1.2rem; background:rgba(0,0,0,0.2); border-bottom:1px solid rgba(196,168,130,0.15);">
-            <button type="button" onclick="calCambiarMes(-1)" style="background:none; border:none; color:#c8ddb8; font-size:1.4rem; cursor:pointer; padding:0 0.4rem; line-height:1;">‹</button>
-            <span id="cal-mes-label" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.1rem; color:#f5efe6; letter-spacing:0.05em;"></span>
-            <button type="button" onclick="calCambiarMes(1)" style="background:none; border:none; color:#c8ddb8; font-size:1.4rem; cursor:pointer; padding:0 0.4rem; line-height:1;">›</button>
-          </div>
-
-          <!-- Días semana -->
-          <div style="display:grid; grid-template-columns:repeat(7,1fr); text-align:center; padding:0.6rem 0.8rem 0.2rem; gap:2px;">
-            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Do</span>
-            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Lu</span>
-            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Ma</span>
-            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Mi</span>
-            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Ju</span>
-            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Vi</span>
-            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Sá</span>
-          </div>
-
-          <!-- Grid días -->
-          <div id="cal-grid" style="display:grid; grid-template-columns:repeat(7,1fr); padding:0.2rem 0.8rem 0.8rem; gap:3px;"></div>
-
-        </div>
-
-        <!-- Resumen fechas -->
-        <div id="cal-resumen" style="display:none; margin-top:0.8rem; padding:0.7rem 1rem; background:rgba(176,128,80,0.12); border:1px solid rgba(176,128,80,0.3); border-radius:3px; font-size:0.85rem; color:#c8a870; text-align:center; line-height:1.6;"></div>
-
-        <p style="font-size:0.72rem; color:rgba(248,244,238,0.35); margin-top:0.6rem; font-style:italic;">Primer clic: fecha de llegada · Segundo clic: fecha de salida</p>
-      </div>
-
-      <!-- COLUMNA DERECHA: Formulario con calculadora -->
-      <div>
+      <!-- Nombre y Email -->
       <div class="form-row">
         <div class="form-group">
           <label data-i18n="form_nombre">Nombre</label>
@@ -1434,33 +1389,53 @@
           <input type="email" id="f-email" placeholder="tu@email.com">
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label data-i18n="form_llegada">Fecha de llegada</label>
-          <input type="date" id="f-llegada" onchange="calcularTotal()">
+
+      <!-- Inputs ocultos para fechas -->
+      <input type="hidden" id="f-llegada">
+      <input type="hidden" id="f-salida">
+
+      <!-- CALENDARIO -->
+      <div style="margin-bottom:1rem;">
+        <label style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--verde-claro); display:block; margin-bottom:0.8rem;">Seleccioná tus fechas</label>
+        <div style="background:rgba(10,20,10,0.75); border:1px solid rgba(196,168,130,0.25); border-radius:4px; overflow:hidden;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.9rem 1.2rem; background:rgba(0,0,0,0.2); border-bottom:1px solid rgba(196,168,130,0.15);">
+            <button type="button" onclick="calCambiarMes(-1)" style="background:none; border:none; color:#c8ddb8; font-size:1.4rem; cursor:pointer; padding:0 0.4rem; line-height:1;">‹</button>
+            <span id="cal-mes-label" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.1rem; color:#f5efe6; letter-spacing:0.05em;"></span>
+            <button type="button" onclick="calCambiarMes(1)" style="background:none; border:none; color:#c8ddb8; font-size:1.4rem; cursor:pointer; padding:0 0.4rem; line-height:1;">›</button>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); text-align:center; padding:0.6rem 0.8rem 0.2rem; gap:2px;">
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Do</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Lu</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Ma</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Mi</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Ju</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Vi</span>
+            <span style="font-size:0.7rem; color:rgba(200,221,184,0.45);">Sá</span>
+          </div>
+          <div id="cal-grid" style="display:grid; grid-template-columns:repeat(7,1fr); padding:0.2rem 0.8rem 0.8rem; gap:3px;"></div>
         </div>
-        <div class="form-group">
-          <label data-i18n="form_salida">Fecha de salida</label>
-          <input type="date" id="f-salida" onchange="calcularTotal()">
-        </div>
+
+        <!-- Resumen noches -->
+        <div id="cal-resumen" style="display:none; margin-top:0.8rem; padding:0.7rem 1rem; background:rgba(176,128,80,0.12); border:1px solid rgba(176,128,80,0.3); border-radius:3px; font-size:0.85rem; color:#c8a870; text-align:center; line-height:1.6;"></div>
+        <p style="font-size:0.72rem; color:rgba(248,244,238,0.35); margin-top:0.6rem; font-style:italic; text-align:center;">Primer clic: fecha de llegada · Segundo clic: fecha de salida</p>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label data-i18n="form_personas">Cantidad de personas</label>
-          <select id="f-personas" onchange="calcularTotal()">
-            <option value="1">1 persona</option>
-            <option value="2">2 personas</option>
-            <option value="3">3 personas</option>
-            <option value="4">4 personas</option>
-            <option value="5">5 personas</option>
-            <option value="6">6 personas</option>
-          </select>
-        </div>
+
+      <!-- Personas -->
+      <div class="form-group">
+        <label data-i18n="form_personas">Cantidad de personas</label>
+        <select id="f-personas" onchange="calcularTotal()">
+          <option value="1">1 persona</option>
+          <option value="2">2 personas</option>
+          <option value="3">3 personas</option>
+          <option value="4">4 personas</option>
+          <option value="5">5 personas</option>
+          <option value="6">6 personas</option>
+        </select>
       </div>
 
       <!-- SELECTOR DE SERVICIOS TIPO CARRITO -->
-      <div style="margin-bottom:1rem;">
-        <label style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--verde-claro); display:block; margin-bottom:0.8rem;" data-i18n="form_interes">¿Qué te interesa?</label>
+      <div style="margin-bottom:1rem; text-align:left;">
+        <label style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--verde-claro); display:block; margin-bottom:0.8rem; text-align:left;" data-i18n="form_interes">¿Qué te interesa?</label>
         <div style="display:flex; flex-direction:column; gap:0.5rem;">
 
           <!-- Paquete Escape Patagónico -->
@@ -1538,8 +1513,6 @@
       <button class="form-submit" data-i18n="res_btn" onclick="enviarConsulta()" style="margin-bottom:0.6rem;">Consultar por WhatsApp 💬</button>
       <button class="form-submit" onclick="enviarEmail()" style="background:rgba(255,255,255,0.08); border:1px solid rgba(200,221,184,0.3);">Consultar por Email ✉</button>
     </div>
-      </div><!-- cierre columna derecha -->
-    </div><!-- cierre reserva-cols -->
   </div>
 </section>
 
@@ -1752,6 +1725,10 @@ function enviarEmail() {
   var cuerpo = "Nombre: " + nombre + "\n";
   if (llegada) cuerpo += "Llegada: " + llegada + "\n";
   if (salida) cuerpo += "Salida: " + salida + "\n";
+  if (llegada && salida) {
+    var noches = Math.round((new Date(salida) - new Date(llegada)) / 86400000);
+    if (noches > 0) cuerpo += "Noches: " + noches + "\n";
+  }
   cuerpo += "Personas: " + personas + "\n";
   if (servicios.length > 0) cuerpo += "Intereses: " + servicios.join(", ") + "\n";
   if (total) cuerpo += "Total estimado: " + total + "\n";
@@ -1921,6 +1898,10 @@ function enviarConsulta() {
   msg += "👤 Nombre: " + nombre + "\n";
   if (llegada) msg += "📅 Llegada: " + llegada + "\n";
   if (salida) msg += "📅 Salida: " + salida + "\n";
+  if (llegada && salida) {
+    var noches = Math.round((new Date(salida) - new Date(llegada)) / 86400000);
+    if (noches > 0) msg += "🌙 Noches: " + noches + "\n";
+  }
   msg += "👥 Personas: " + personas + "\n";
   if (servicios.length > 0) msg += "\n🛎 Intereses:\n" + servicios.join("\n") + "\n";
   if (total) msg += "\n💰 Total estimado: " + total + "\n";
