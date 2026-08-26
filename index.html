@@ -46,16 +46,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 4rem;
-    height: 64px;
+    padding: 0 6rem;
+    height: 72px;
   }
 
   .nav-logo {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.4rem;
+    font-size: 2rem;
     color: var(--crema);
     letter-spacing: 0.08em;
     text-decoration: none;
+    line-height: 1;
   }
 
   .nav-logo span {
@@ -951,7 +952,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">LUAN</a>
+  <a href="#hero" class="nav-logo">LUAN<span style="display:block; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(200,221,184,0.7); font-family:'Lato',sans-serif; font-weight:400; margin-top:0.15rem;">Bed &amp; Trek</span></a>
   <ul class="nav-links">
     <li><a href="#bed" data-i18n="nav_cabana">Cabaña</a></li>
     <li><a href="#trek" data-i18n="nav_trek">Trek</a></li>
@@ -975,17 +976,16 @@
       </svg>
 
   <div class="hero-content">
-    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Villa La Angostura · Patagonia Argentina</p>
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow" style="margin-bottom:3rem;">Villa La Angostura · Patagonia Argentina</p>
     <h1 class="hero-title">LUAN</h1>
-    <p class="hero-subtitle-brand">Bed &amp; Trek</p>
-    <p class="hero-desc" data-i18n="hero_desc">Un proyecto que combina hogar, naturaleza y aventura en una experiencia única, para que conectes con la belleza de la Patagonia y disfrutes de la tranquilidad de la montaña.<br><br>Te ofrecemos el pack de aventura que necesitás: alojamiento, trekking y mucho más para descubrir Villa La Angostura de una manera auténtica.</p>
-    <div class="hero-buttons">
+    <p class="hero-desc" data-i18n="hero_desc" style="font-size:1.15rem;">Ofrecemos el pack de aventura que necesitás: alojamiento, trekking y mucho más para descubrir Villa La Angostura de una manera auténtica.</p>
+    <div class="hero-buttons" style="margin-top:3rem;">
       <a href="#reserva" class="btn-primary" data-i18n="hero_btn1">Consultar disponibilidad</a>
       <a href="#trek" class="btn-secondary" data-i18n="hero_btn2">Ver salidas de trekking</a>
     </div>
 
     <!-- CONTACTOS HERO -->
-    <div style="margin-top:2rem; display:flex; flex-direction:column; align-items:center; gap:0.5rem;">
+    <div style="margin-top:3rem; display:flex; flex-direction:column; align-items:center; gap:0.5rem;">
       <a href="https://www.instagram.com/luan.vla/" target="_blank" style="display:flex; align-items:center; gap:0.7rem; color:rgba(200,221,184,0.85); text-decoration:none; font-size:1.1rem; padding:0.3rem 0; transition:color 0.2s;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> luan.vla
       </a>
